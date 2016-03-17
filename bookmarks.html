@@ -1,0 +1,109 @@
+<!DOCTYPE html> <!-- HTML5 -->
+<html>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./w3.css">
+<link rel="stylesheet" href="./w3-colors-ana.css">
+<head>
+	<title>Fredriks bokmerker</title>
+	<style>
+		a:link, a:visited {
+		    /*width: 100%;
+		    height: 100%;*/
+		    text-decoration: none;
+		    text-align: left;
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="bookmarks.js"></script>
+</head>
+
+<body id="body" class="w3-ana-aircraft-white">
+
+<div id="fhead" class="w3-container w3-ana-insignia-red">
+	<h1>Fredriks bokmerker</h1><br/>
+	<!-- For et Fredligere liv -->
+	<div align="right">
+		<button class="w3-btn" onclick="changeClass()">natt</button>
+	</div>
+</div>
+
+
+
+<div class="w3-row-padding">
+<div class="w3-third">
+  <h2>Alma</h2>
+  	<a id="skranke" class="w3-btn w3-ana-blue w3-hover-amber w3-btn-block" href="https://idp.feide.no/simplesaml/module.php/feide/login.php?asLen=226&AuthState=_fcb325d7059d3613811fc69512f441781ab3d83987%3Ahttps%3A%2F%2Fidp.feide.no%2Fsimplesaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Dhttps%253A%252F%252Fbibsys-tb.alma.exlibrisgroup.com%252Fmng%252Flogin%26cookieTime%3D1449489456%26RelayState%3Dmng%2540%254047BIBSYS_BI"  target="_blank">Alma BI</a>
+  	<a class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="http://libguides.bi.no/almalibguide" target="_blank">Alma Libguide</a>
+</div>
+
+<!--
+<a class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="" target="_blank"></a>
+-->
+
+<div class="w3-third">
+	<h2>Oria / Primo</h2>
+	<a id="skranke" class="w3-btn w3-ana-blue w3-hover-amber w3-btn-block" href="http://bi.oria.no/" target="_blank">Oria BI</a>
+	<a class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="http://bibsys-almaprimo.hosted.exlibrisgroup.com:1601/primo_publishing/admin/acegilogin.jsp" target="_blank">Primo Back Office Production</a>
+	<a class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="http://bibsys-primostg.hosted.exlibrisgroup.com:1701/primo_library/libweb/action/search.do?vid=BI" target="_blank">Oria BI SANDBOX</a>
+	<a class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="http://bibsys-primostg.hosted.exlibrisgroup.com:1601/primo_publishing/admin/acegilogin.jsp" target="_blank">Primo Back Office SANDBOX</a>
+	<a class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="http://www.bibsys.no/testinstanser-oria/" target="_blank">Testinstanser Oria</a>
+</div>
+
+
+<div class="w3-third">
+	<h2>BI</h2>
+	<a id="skranke" class="w3-btn w3-ana-blue w3-hover-amber w3-btn-block" href="https://www.bi.no/bibliotek/" target="_blank">BI Bibliotek</a>
+	<a class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="https://at.bi.no/NO" target="_blank">@BI</a>
+	<a class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="https://www.bi.no/" target="_blank">BI</a>
+	<a id="skranke" class="w3-btn w3-ana-blue w3-hover-amber w3-btn-block" href="http://readinglist.bi.edu/" target="_blank">Interaktive pensumlister - Talis</a>
+	<a  class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="https://bikuben.bi.no/en/" target="_blank">BIkuben</a>
+	<a class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="https://www.bi.no/bibliotek/Om-biblioteket/Kontaktinformasjon/Ansatte-ved-Biblioteket/" target="_blank">Ansatte BIs bibliotektjeneste</a>
+	<a class="w3-btn w3-ana-field-green w3-hover-amber w3-btn-block" href="http://www.bi.no/util/login.aspx" target="_blank">EPI-server (norsk)</a>
+	<a class="w3-btn w3-ana-field-green w3-hover-amber w3-btn-block" href="http://www.bi.edu/util/login.aspx" target="_blank">EPI-server (engelsk)</a>
+</div>
+
+</div>
+
+<!--
+<a class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="" target="_blank"></a>
+-->
+
+<div class="w3-row-padding">
+<div class="w3-third">
+	<h2>Diverse</h2>
+	<a class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="http://smartadmin.bibliotheca.dk:8080/statServer/" target="_blank">Bibliotheca SmartAdmin</a>
+	<a class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="https://forum.bibsys.no/index.php" target="_blank">BIBSYS Forum</a>
+</div>
+
+
+<div class="w3-third">
+	<h2>Ex Libris</h2>
+	<a class="w3-btn w3-ana-field-green w3-hover-amber w3-btn-block" href="https://developers.exlibrisgroup.com/" target="_blank">Developer Network</a>
+	<a class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="https://knowledge.exlibrisgroup.com/" target="_blank">Knowledge Center</a>
+</div>
+
+<div class="w3-third">
+	<h2>Programmering</h2>
+	<a class="w3-btn w3-ana-field-green w3-hover-amber w3-btn-block" href="http://www.w3schools.com/" target="_blank">w3schools.com</a>
+	<a class="w3-btn w3-ana-field-green w3-hover-amber w3-btn-block" href="http://www.w3schools.com/html/default.asp" target="_blank">W3 HTML</a>
+	<a class="w3-btn w3-ana-field-green w3-hover-amber w3-btn-block" href="http://www.w3schools.com/css/default.asp" target="_blank">W3 CSS</a>
+	<a class="w3-btn w3-ana-field-green w3-hover-amber w3-btn-block" href="http://www.w3schools.com/w3css/default.asp" target="_blank">W3.CSS</a>
+</div> 
+
+</div>
+
+
+<!--
+<a class="w3-btn w3-ana-olive-drab w3-hover-amber w3-btn-block" href="" target="_blank"></a>
+-->
+
+
+<!--
+<footer class="w3-container w3-ana-brown">
+  <h5>Fredriks footer</h5>
+  <p></p>
+</footer>
+-->
+
+
+<body>
+</html>
