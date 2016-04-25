@@ -1,0 +1,120 @@
+/***************************************************
+CSS by Fredrik H. Juell, fjuell@gmail.com
+FOR GRAVITY-CALC
+****************************************************/
+
+
+body {color: #000000;
+       background-color:#ffffff;
+       /*background-image: url("./bilder/wall/beach2_dark.jpg");
+       background-repeat: repeat
+       background-attachment: fixed;*/
+       font-family: arial, helvetica, sans-serif;
+       font-size: medium;
+       }
+
+
+a:link {color:#ff0000 ; text-decoration:underline}
+a:visited {color:#ff0000 ; text-decoration:underline}
+a:hover {color:#ffffff ; background-color:#ff0000 ; text-decoration:none}
+
+a.menu:link {color:#ffffff ; background-color:#ff0000 ; text-decoration:none}
+a.menu:visited {color:#ffffff ; background-color:#ff0000 ;
+                 text-decoration:none}
+a.menu:hover {color:#ff0000 ; background-color:#ffffff ;
+               text-decoration:underline}
+
+a.submenu:link {color:#ffffff ; background-color:#ff0000 ; text-decoration:none}
+a.submenu:visited {color:#ffffff ; background-color:#ff0000 ;
+                 text-decoration:none}
+a.submenu:hover {color:#ff0000 ; background-color:#ffffff ;
+               text-decoration:underline}
+
+
+
+h1 {color:#000000 ;
+     font-family: arial, helvetica, sans-serif;
+     font-size:x-large;
+     font-weight:normal; font-style:normal;
+     text-transform: none; text-decoration:none;
+     border-bottom: none
+     }
+
+h2, h3, h4, h5 {font-family:monotype corsiva, urw chancery l,
+                 lucida handwriting,script,new times roman,cursive ;
+                 font-weight:normal ; font-style:italic ;
+                 text-transform:none ; text-decoration:none ;
+                 border-bottom:medium ridge #ff0000;
+                 color:#ff0000 ; }
+/*td {color:#000000; font-family:arial,helvetica,sans-seif; font-weight:bold}*/
+
+#head {height:15%; width:100%}
+#main {height:85%; width:100%}
+
+input {color:#000000; font-family:arial,helvetica,sans-seif; font-size:medium; font-weight:bold; padding:1}
+#calctable {border-collapse:collapse;}
+#m {color:#000000; font-weight:bold;}
+#gravity {color:#000000; background-color:#aaffaa; font-weight:bold; font-size:x-large; border-style:none}
+#mass {color:#000000; background-color:#ffffff; font-weight:bold; font-size:medium}
+.name {color:#000000; background-color:#dddddd; font-weight:bold; text-align:left}
+.kg {color:#000000; background-color:#ffffaa; font-weight:bold}
+.lb {color:#000000; background-color:#dddddd; font-weight:bold; text-align:right}
+.percent {color:#000000; background-color:#ffffaa; font-weight:bold; text-align:right}
+
+
+#ieex {font-size:x-large; border-style:dotted; background-color:#ffff00; visibility:hidden}
+
+
+
+pre {font-family: monospace ; color: #ffdead ; font-weight:normal}
+
+input.radio {color:#000000 ; background-color:transparent}
+select.Topsoek{color:#ffffff ; background-color:#ffffff}
+
+textarea {color:#000000 ; background-color:#ffffff}
+script {font-size:x-small; color: #000000;
+         font-family: arial, helvetica, sans-serif; background-image:none}
+
+small {color: #000000; font-family: arial, helvetica, sans-serif;
+        background-image:none ; font-weight:normal ; font-size:xx-small}
+
+address {color: #000000; font-weight:bold;
+          font-family: arial, helvetica, sans-serif; background-image:none}
+
+
+#big {font-size:120%}
+#upper {text-transform:uppercase}
+
+
+<!--
+.text {color:#000000}
+.textbg {background-color: #ffffff}
+.low1 {color: #8b4513}
+.low1bg {background-color: #8b4513}
+.mid1 {color: #b22222}
+.mid1bg {background-color: #b22222}
+.high1 {color:#ff4500}
+.high1bg {background-color:#ff4500}
+.high2 {color:#ffff00}
+.high2bg {background-color:#ffff00}
+
+.blue {color: #8b4513}
+.yellow {color: #ffff00}
+.green {color: #8b4513}
+.red {color: #ff0000}
+.grey {color: silver}
+.bgblue {background-color: #ff0000}
+.bgyellow {background-color: #ff0000}
+.bggreen {background-color: #ff0000}
+.bgred {background-color: #ff0000}
+.bggrey {background-color: #ff0000}
+.menu {background-color: #ff0000 ; color:#ffffff ;
+        font-family:arial, helvetica, sans-serif;
+        font-style:normal; font-size:small}
+.submenu {background-color: #ff0000 ; color:#ffffff ;
+           font-family:arial, helvetica, sans-serif;
+           font-style:normal; font-size:xx-small; text-indent:14px}
+.subsubmenu {background-color: #ff0000 ; color:#ffffff ;
+              font-family:arial, helvetica, sans-serif;
+              font-style:normal; font-size:xx-small; text-indent:36px}
+-->
