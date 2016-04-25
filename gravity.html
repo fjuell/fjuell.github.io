@@ -2,9 +2,15 @@
 <html>
 <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
 <head>
 	<title>Juells bryggeri: Gravity-kalkulator</title>
 	<link rel="apple-touch-icon" sizes="114x114" href="gravity/images/icon.png"/>
+	<style>
+		.w3-lobster {
+		  font-family: "Lobster", serif;
+		}
+	</style>
 	
 	<script> 
 	function x() {
@@ -59,24 +65,23 @@
 
 <body onload="f(),x(),p(),imp()">
 
-<section id="head">
-
 <!-- <img src="gravity/images/icon.png" align="left"> -->
-<h1 class="w3-red">Juells bryggeri: Gravity-kalkulator</h1>
-<br>
-</section>
+<div class="w3-container w3-lobster w3-teal w3-xxlarge">
+	Juells bryggeri: Gravity-kalkulator
+</div>
+
 <section id="main">
 <form oninput="f(),x(),p(),imp()">
-<table id="calctable" cellpadding="1" class="w3-table w3-bordered w3-striped">
+<table id="calctable" cellpadding="1" class="w3-table w3-striped">
 	<thead>
 		<tr class="w3-orange">
 			<th>Ingrediens</th>
 			<th>Mengde</th>
-			<th>Engelske mål</th>
+			<th>Amerikanske mål</th>
 			<th>Andel</th>
 		</tr>
 	</thead>		
-	<tr><td class="name">Basismalt:</td> <td class="kg"><input size="4" type="text" id="basis" value="5">kg </td><td class="lb">&nbsp;<output id="lbbasis"></output>lb&nbsp;</td><td class="percent"><output id="pbasis"></output>%</td></tr>
+	<tr><td class="kg"><label>Basismalt (kg)</label><input class="w3-input w3-border w3-round" type="text" size="1" id="basis" value="5"></td><td class="lb">&nbsp;<output id="lbbasis"></output>lb&nbsp;</td><td class="percent"><output id="pbasis"></output>%</td></tr>
 	
 	<tr><td class="name">Spesialmalt:</td> <td class="kg"><input size="4" type="text" id="spes" value="0.5" step="0.5">kg</td><td class="lb">&nbsp;<output id="lbspes"></output>lb&nbsp;</td><td class="percent"><output id="pspes"></output>%</td></tr>
 	
