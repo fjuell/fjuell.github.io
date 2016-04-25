@@ -61,13 +61,21 @@
 
 <section id="head">
 
-<img src="gravity/images/icon.png" align="left">
-<h1>Juells bryggeris gravity-kalkulator</h1>
+<!-- <img src="gravity/images/icon.png" align="left"> -->
+<h1 class="w3-red">Juells bryggeri: Gravity-kalkulator</h1>
 <br>
 </section>
 <section id="main">
 <form oninput="f(),x(),p(),imp()">
-<table id="calctable" cellpadding="1">
+<table id="calctable" cellpadding="1" class="w3-table w3-bordered w3-striped">
+	<thead>
+		<tr class="w3-orange">
+			<th>Ingrediens</th>
+			<th>Mengde</th>
+			<th>Engelske mål</th>
+			<th>Andel</th>
+		</tr>
+	</thead>		
 	<tr><td class="name">Basismalt:</td> <td class="kg"><input size="4" type="text" id="basis" value="5">kg </td><td class="lb">&nbsp;<output id="lbbasis"></output>lb&nbsp;</td><td class="percent"><output id="pbasis"></output>%</td></tr>
 	
 	<tr><td class="name">Spesialmalt:</td> <td class="kg"><input size="4" type="text" id="spes" value="0.5" step="0.5">kg</td><td class="lb">&nbsp;<output id="lbspes"></output>lb&nbsp;</td><td class="percent"><output id="pspes"></output>%</td></tr>
