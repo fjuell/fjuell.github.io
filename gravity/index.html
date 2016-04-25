@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dælenenga nanobryggeris gravity-kalkulator</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+	<link href="styles/gravity.css" type="text/css" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/icon.png"/>
+	
+	<script>
+	function x() {
+		document.getElementById('g').value = ((1000 +
+			(
+				375*parseFloat(document.getElementById('dme').value) +
+				270*parseFloat(document.getElementById('lme').value)
+			) /
+			parseFloat(document.getElementById('vol').value)
+			+
+			parseFloat(document.getElementById('eff').value) * 
+			(
+				296*parseFloat(document.getElementById('basis').value) + 
+				270*parseFloat(document.getElementById('spes').value)
+			) /
+			(
+				100*parseFloat(document.getElementById('vol').value)
+			)
+		)/1000).toFixed(3);
+	};
+	
+	function f() {
+		
+		//var m = $('#m').val();
+		
+		document.getElementById('m').value = (
+			parseFloat(document.getElementById('basis').value) +
+			parseFloat(document.getElementById('spes').value) +
+			parseFloat(document.getElementById('lme').value) +
+			parseFloat(document.getElementById('dme').value) 
+		).toFixed(2);
+	};
+	
+	function p() {
+		document.getElementById('pbasis').value = ((100*parseFloat(document.getElementById('basis').value)) / document.getElementById('m').value).toFixed(0);
+		document.getElementById('pspes').value = ((100*parseFloat(document.getElementById('spes').value)) / document.getElementById('m').value).toFixed(0);
+		document.getElementById('plme').value = ((100*parseFloat(document.getElementById('lme').value)) / document.getElementById('m').value).toFixed(0);
+		document.getElementById('pdme').value = ((100*parseFloat(document.getElementById('dme').value)) / document.getElementById('m').value).toFixed(0);
+	};
+
+	function imp() {
+		document.getElementById('lbbasis').value = (parseFloat(document.getElementById('basis').value) * 2.2046).toFixed(1);
+		document.getElementById('lbspes').value = (parseFloat(document.getElementById('spes').value) * 2.2046).toFixed(1);
+		document.getElementById('lblme').value = (parseFloat(document.getElementById('lme').value) * 2.2046).toFixed(1);
+		document.getElementById('lbdme').value = (parseFloat(document.getElementById('dme').value) * 2.2046).toFixed(1);
+		document.getElementById('lbtot').value = (parseFloat(document.getElementById('m').value) * 2.2046).toFixed(1);
+		document.getElementById('galvol').value = (parseFloat(document.getElementById('vol').value) / 3.7854).toFixed(1);
+	};
+	
+	</script>
+</head>
+
+<body onload="f(),x(),p(),imp()">
+
+<section id="head">
+
+<img src="images/icon.png" align="left">
+<h1>Dælenenga nanobryggeris gravity-kalkulator</h1>
+<br>
+</section>
+<section id="main">
+<form oninput="f(),x(),p(),imp()">
+<table id="calctable" cellpadding="1">
+	<tr><td class="name">Basismalt:</td> <td class="kg"><input size="4" type="text" id="basis" value="5">kg </td><td class="lb">&nbsp;<output id="lbbasis"></output>lb&nbsp;</td><td class="percent"><output id="pbasis"></output>%</td></tr>
+	
+	<tr><td class="name">Spesialmalt:</td> <td class="kg"><input size="4" type="text" id="spes" value="0.5" step="0.5">kg</td><td class="lb">&nbsp;<output id="lbspes"></output>lb&nbsp;</td><td class="percent"><output id="pspes"></output>%</td></tr>
+	
+	<tr><td class="name">Sirup/LME:</td> <td class="kg"><input size="4" type="text" id="lme" value="0" step="0.5">kg</td><td class="lb">&nbsp;<output id="lblme"></output>lb&nbsp;</td><td class="percent"><output id="plme"></output>%</td></tr>
+	
+	<tr><td class="name">Sukker/DME:</td> <td class="kg"><input size="4" type="text" id="dme" value="0" step="0.5">kg</td><td class="lb">&nbsp;<output id="lbdme"></output>lb&nbsp;</td><td class="percent">
+	<output id="pdme"></output>%</td></tr>
+	
+	<tr><td class="name">Volum:</td> <td class="kg"><input size="3" type="text" id="vol" value="22">L</td><td class="lb"><output id="galvol"></output>gal&nbsp;</td><td class="percent"></td></tr>
+	
+	<tr><td class="name">Utbytte:</td> <td class="kg"><input size="3" type="text" id="eff" value="70">%</td><td class="lb"></td><td class="percent"></tr>
+	
+	<tr id="mass"><td>Totalt: </td> <td><output id="m"></output>kg</td><td><output id="lbtot"></output>lb&nbsp;</td><td></td></tr>
+	
+	<tr id="gravity"><td>Gravity: </td> <td><output id="g"></output></td><td></td><td></td></tr>
+</table>
+</form>
+
+</section>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
