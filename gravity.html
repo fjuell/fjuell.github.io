@@ -14,6 +14,9 @@
 		input[type=range] {
 			  width: 100%; /* Specific width is required for Firefox. */
 			}
+		input[type=number] {
+			  width: 25%; /* Specific width is required for Firefox. */
+			}
 	</style>
 	
 	<script> 
@@ -92,18 +95,18 @@
 			<th>Andel</th>
 		</tr>
 	</thead>		
-	<tr><td><span class="w3-badge w3-teal">kg</span> <label class="w3-label w3-text-teal"><b>Basismalt</b></label><input class="w3-input w3-round" type="number" id="basis" value="5"></td><td>&nbsp;<output id="lbbasis"></output>lb&nbsp;</td><td><output id="pbasis"></output>%</td></tr>
+	<tr><td><span class="w3-badge w3-teal">kg</span> <label class="w3-label w3-text-teal"><b>Basismalt</b></label><input class="w3-input w3-round" type="number" id="basis" value="5" step="0.5"></td><td>&nbsp;<output id="lbbasis"></output>lb&nbsp;</td><td><output id="pbasis"></output>%</td></tr>
 	
-	<tr><td><span class="w3-badge w3-teal">kg</span> <label class="w3-label w3-text-teal"><b>Spesialmalt</b></label><input class="w3-input w3-round" type="text" id="spes" value="0.0" step="0.5"></td><td>&nbsp;<output id="lbspes"></output>lb&nbsp;</td><td><output id="pspes"></output>%</td></tr>
+	<tr><td><span class="w3-badge w3-teal">kg</span> <label class="w3-label w3-text-teal"><b>Spesialmalt</b></label><input class="w3-input w3-round" type="number" id="spes" value="0.0" step="0.1"></td><td>&nbsp;<output id="lbspes"></output>lb&nbsp;</td><td><output id="pspes"></output>%</td></tr>
 	
-	<tr><td><span class="w3-badge w3-teal">kg</span> <label class="w3-label w3-text-teal"><b>Sirup/LME</b></label><input class="w3-input w3-round" type="text" id="lme" value="0.0" step="0.5"><td>&nbsp;<output id="lblme"></output>lb&nbsp;</td><td><output id="plme"></output>%</td></tr>
+	<tr><td><span class="w3-badge w3-teal">kg</span> <label class="w3-label w3-text-teal"><b>Sirup/LME</b></label><input class="w3-input w3-round" type="number" id="lme" value="0.0" step="0.5"><td>&nbsp;<output id="lblme"></output>lb&nbsp;</td><td><output id="plme"></output>%</td></tr>
 	
-	<tr><td><span class="w3-badge w3-teal">kg</span> <label class="w3-label w3-text-teal"><b>Sukker/DME</b></label><input class="w3-input w3-round" type="text" id="dme" value="0.0" step="0.5"></td><td>&nbsp;<output id="lbdme"></output>lb&nbsp;</td><td>
+	<tr><td><span class="w3-badge w3-teal">kg</span> <label class="w3-label w3-text-teal"><b>Sukker/DME</b></label><input class="w3-input w3-round" type="number" id="dme" value="0.0" step="0.5"></td><td>&nbsp;<output id="lbdme"></output>lb&nbsp;</td><td>
 	<output id="pdme"></output>%</td></tr>
 	
-	<tr><td><span class="w3-badge w3-teal">L</span> <label class="w3-label w3-text-teal"><b>Volum</b></label><input class="w3-input w3-round" type="text" id="vol" value="23"></td><td><output id="galvol"></output>gal&nbsp;</td><td></td></tr>
+	<tr><td><span class="w3-badge w3-teal">L</span> <label class="w3-label w3-text-teal"><b>Volum</b></label><input class="w3-input w3-round" type="number" id="vol" value="23"></td><td><output id="galvol"></output>gal&nbsp;</td><td></td></tr>
 	
-	<tr><td><span class="w3-badge w3-teal">%</span> <label class="w3-label w3-text-teal"><b>Utbytte</b></label><input class="w3-input w3-round" type="text" id="eff" value="75"></td><td></td><td></tr>
+	<tr><td><span class="w3-badge w3-teal">%</span> <label class="w3-label w3-text-teal"><b>Utbytte</b></label><input class="w3-input w3-round" type="number" id="eff" value="75"></td><td></td><td></tr>
 	
 	<tr><td>Totalt: <output id="m"></output>kg</td><td><output id="lbtot"></output>lb&nbsp;</td></td><td></tr>
 	
@@ -115,9 +118,9 @@
 
 
 <form oninput="temp()">
+	C: <div id="ctemp"></div><br/>
 	<input type="range" id="myRange" value="18" min="0" max="100" step="0.1"><br/>
-	C<div id="ctemp"></div><br/>
-	F<div id="ftemp"></div>
+	F: <div id="ftemp"></div>
 </form>
 
 
