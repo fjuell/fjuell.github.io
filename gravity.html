@@ -69,18 +69,26 @@
 		document.getElementById('galvol').value = (parseFloat(document.getElementById('vol').value) / 3.7854).toFixed(1);
 	};
 	
+	function fabv() {
+		var fg = document.getElementById("fginput").value;
+		var og = document.getElementById('g').value
+		/* Simple formula: */
+		/* document.getElementById('abv').value = ((og-fg)*131.25).toFixed(1); */
+		/* Advanced formula, more accurate for higher abv: */
+		document.getElementById('abv').value = ((76.08 * (og-fg) / (1.775-og)) * (fg / 0.794)).toFixed(1);
+
+	};	
+
 	function temp() {
 		var cx = document.getElementById("myRange").value;
 		document.getElementById("ctemp").innerHTML = (cx*1 + 0).toFixed(1);
 		var fx = (cx*1.8 + 32.0).toFixed(1);
 		document.getElementById("ftemp").innerHTML = fx;
-
-		/*(parseFloat(document.getElementById('ctemp').value) * 1.8 + 32.0).toFixed(1);*/
 	};
 	</script>
 </head>
 
-<body onload="f(),x(),p(),imp(),temp()" class="w3-light-grey">
+<body onload="f(),x(),p(),imp(),fabv(),temp()" class="w3-light-grey">
 
 
 <!-- <img src="gravity/images/icon.png" align="left"> -->
@@ -88,7 +96,7 @@
 	Dælenenga gravity-kalkulator
 </div>
 
-<form oninput="f(),x(),p(),imp()">
+<form oninput="f(),x(),p(),imp(),fabv()">
 <table id="calctable" cellpadding="1" class="w3-table">
 	<thead>
 		<tr class="w3-orange">
@@ -112,7 +120,11 @@
 	
 	<tr><td>Totalt: <output id="m"></output>kg</td><td><output id="lbtot"></output>lb&nbsp;</td></td><td></tr>
 	
-	<tr class="w3-orange w3-xlarge"><td><b>Gravity: <output id="g"></output></b></td></td><td><td></td></tr>
+	<tr class="w3-orange w3-xlarge"><td><b>OG: <output id="g"></output></b></td></td><td><td></td></tr>
+
+	<tr><td colspan="3">&nbsp;</td></tr>
+
+	<tr><td><span class="w3-badge w3-teal">FG</span><label class="w3-label w3-text-teal"><b>Final gravity</b></label><input class="w3-input w3-round" type="number" id="fginput" value="1.010" step="0.001"></td><td colspan="2">&nbsp;ABV: <output id="abv"></output>%</td></tr>	
 </table>
 </form>
 
