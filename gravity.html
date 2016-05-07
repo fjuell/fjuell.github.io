@@ -71,12 +71,14 @@
 	
 	function fabv() {
 		var fg = document.getElementById("fginput").value;
-		var og = document.getElementById('g').value
+		var og = document.getElementById('g').value;
+		var carbo = parseFloat(document.getElementById('carboinput').value);
 		/* Simple formula: */
 		/* document.getElementById('abv').value = ((og-fg)*131.25).toFixed(1); */
 		/* Advanced formula, more accurate for higher abv: */
-		document.getElementById('abv').value = ((76.08 * (og-fg) / (1.775-og)) * (fg / 0.794)).toFixed(1);
-
+		document.getElementById('abv').value = ((76.08 * (og-fg) / (1.775-og)) * (fg / 0.794)).toFixed(2);
+		var abvx = parseFloat(document.getElementById('abv').value);
+		document.getElementById('abvtot').value = (abvx + (carbo / 17.0)).toFixed(2);
 	};	
 
 	function temp() {
@@ -101,7 +103,7 @@
 	<thead>
 		<tr class="w3-orange">
 			<th>Input</th>
-			<th>US mål</th>
+			<th>US-mål</th>
 			<th>Andel</th>
 		</tr>
 	</thead>		
@@ -124,13 +126,20 @@
 
 	<tr><td colspan="3">&nbsp;</td></tr>
 
-	<tr><td><span class="w3-badge w3-teal">FG</span><label class="w3-label w3-text-teal"><b>Final gravity</b></label><input class="w3-input w3-round" type="number" id="fginput" value="1.010" step="0.001"></td><td colspan="2">&nbsp;ABV: <output id="abv"></output>%</td></tr>	
+	<tr><td colspan="1"><span class="w3-badge w3-teal">&nbsp;&nbsp;&nbsp;</span> <label class="w3-label w3-text-teal"><b>FG</b></label><input class="w3-input w3-round" type="number" id="fginput" value="1.010" step="0.001">
+	</td><td colspan="2">&nbsp;ABV: <output id="abv"></output>%</td></tr>
+
+
+	<tr><td><span class="w3-badge w3-teal">g/L</span> <label class="w3-label w3-text-teal"><b>Sukker til karbonering</b></label><input class="w3-input w3-round" type="number" id="carboinput" value="6" step="1"></td><td colspan="2">&nbsp;ABV total: <output id="abvtot"></output>%</td></tr>
+		
 </table>
 </form>
 
 <p><br/><br/></p>
 
 
+<table cellpadding="1" class="w3-table"><tr><td>
+<div class="w3-label w3-text-teal"><b>Konvertering av temperatur:</b></div>
 <center>
 <form oninput="temp()">
 	<output id="ctemp"></output>&#8451;<br/>
@@ -138,6 +147,7 @@
 	<output id="ftemp" ></output>&#8457;
 </form>
 </center>
+</td></tr></table>	
 
 
 </body>
