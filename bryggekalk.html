@@ -82,6 +82,32 @@
 		document.getElementById('abvtot').value = (abvx + (carbo / 17.0)).toFixed(2);
 	};	
 
+	function ibu() {
+		var og = document.getElementById('g').value;
+		var v = document.getElementById('vol').value;
+		var masses = [document.getElementById('mass1').value, document.getElementById('mass2').value, document.getElementById('mass3').value, document.getElementById('mass4').value, document.getElementById('mass5').value];
+		var alfas = [document.getElementById('alfa1').value/100, document.getElementById('alfa2').value/100, document.getElementById('alfa3').value/100, document.getElementById('alfa4').value/100, document.getElementById('alfa5').value/100];
+		var times = [document.getElementById('time1').value, document.getElementById('time2').value, document.getElementById('time3').value, document.getElementById('time4').value, document.getElementById('time5').value];
+		var ibu1, ibu2, ibu3, ibu4, ibu5;
+		var ibus = [ibu1, ibu2, ibu3, ibu4, ibu5];
+
+		for (i=0; i<5; i++) {
+			ibus[i] = (alfas[i]*masses[i]*1000/v) 
+					* (1.65*Math.pow(0.000125,(og-1))) 
+					* (1-Math.exp(-0.04*times[i]))/4.15;
+		}
+
+		document.getElementById('ibu1').value = (ibus[0]).toFixed(1);
+		document.getElementById('ibu2').value = (ibus[1]).toFixed(1);
+		document.getElementById('ibu3').value = (ibus[2]).toFixed(1);
+		document.getElementById('ibu4').value = (ibus[3]).toFixed(1);
+		document.getElementById('ibu5').value = (ibus[4]).toFixed(1);
+	
+		document.getElementById('ibutot').value = (ibus[0]+ibus[1]+ibus[2]+ibus[3]+ibus[4]).toFixed(0);
+
+
+	};
+
 	function temp() {
 		var cx = document.getElementById("myRange").value;
 		document.getElementById("ctemp").innerHTML = (cx*1 + 0).toFixed(1);
@@ -91,7 +117,9 @@
 	</script>
 </head>
 
-<body onload="f(),x(),p(),imp(),fabv(),temp()" class="w3-light-grey">
+<body onload="f(),x(),p(),imp(),fabv(),ibu(),temp()" class="w3-light-grey">
+
+
 
 
 <!-- <img src="gravity/images/icon.png" align="left"> -->
@@ -139,20 +167,66 @@
 
 <p><br/><br/></p>
 
-<div class="w3-container w3-teal w3-xlarge">Bitterhet</div>
+
+<div class="w3-container w3-teal w3-xlarge">Bitterhet (Tinseth)</div>
+<form oninput="ibu()">
 <table cellpadding="1" class="w3-table">
 <thead>
 	<tr class="w3-orange">
-		<th>Humle</th>
-		<th>Tid</th>
+		<th>Vekt</th>
+		<th>Alfasyre</th>
+		<th>Koketid</th>
 		<th>IBU</th>
 	</tr>
 </thead>
 <tr>
-	<td><span class="w3-badge w3-teal">Alfa %</span> <label class="w3-label w3-text-teal"><b>Humle</b></label><input class="w3-input w3-round" type="number" id="alfa1" value="0.0" step="0.5"></td><td>&nbsp;<output id="hgram"></output>g</td><td>
-	<output id="nibu"></output></td>
+	<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass1" value="15" step="5"></td>
+
+	<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa1" value="10.0" step="0.5"></td>
+
+	<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time1" value="60" step="5"></td>
+
+	<td><output id="ibu1"></output></td>
 </tr>
+<tr>
+	<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass2" value="0" step="5"></td>
+
+	<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa2" value="10.0" step="0.5"></td>
+
+	<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time2" value="30" step="5"></td>
+
+	<td><output id="ibu2"></output></td>
+</tr>
+<tr>
+	<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass3" value="0" step="5"></td>
+
+	<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa3" value="10.0" step="0.5"></td>
+
+	<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time3" value="15" step="5"></td>
+
+	<td><output id="ibu3"></output></td>
+</tr>
+<tr>
+	<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass4" value="20" step="5"></td>
+
+	<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa4" value="10.0" step="0.5"></td>
+
+	<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time4" value="10" step="5"></td>
+
+	<td><output id="ibu4"></output></td>
+</tr>
+<tr>
+	<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass5" value="0" step="5"></td>
+
+	<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa5" value="10.0" step="0.5"></td>
+
+	<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time5" value="5" step="5"></td>
+
+	<td><output id="ibu5"></output></td>
+</tr>
+<tr class="w3-orange w3-xlarge"><td colspan="4"><b>IBU: <output id="ibutot"></output></b></td></tr>
 </table>
+</form>
 
 
 <p><br/><br/></p>
