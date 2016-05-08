@@ -78,6 +78,7 @@
 		/* Advanced formula, more accurate for higher abv: */
 		document.getElementById('abv').value = ((76.08 * (og-fg) / (1.775-og)) * (fg / 0.794)).toFixed(2);
 		var abvx = parseFloat(document.getElementById('abv').value);
+		document.getElementById('abvcarbo').value = (carbo/17.0).toFixed(2);
 		document.getElementById('abvtot').value = (abvx + (carbo / 17.0)).toFixed(2);
 	};	
 
@@ -95,14 +96,14 @@
 
 <!-- <img src="gravity/images/icon.png" align="left"> -->
 <div class="w3-container w3-lobster w3-teal w3-xxlarge">
-	Dælenenga gravity-kalkulator
+	Dælenenga bryggekalkulator
 </div>
 
 <form oninput="f(),x(),p(),imp(),fabv()">
 <table id="calctable" cellpadding="1" class="w3-table">
 	<thead>
 		<tr class="w3-orange">
-			<th>Input</th>
+			<th>Malt/div.</th>
 			<th>US-mål</th>
 			<th>Andel</th>
 		</tr>
@@ -127,27 +128,54 @@
 	<tr><td colspan="3">&nbsp;</td></tr>
 
 	<tr><td colspan="1"><span class="w3-badge w3-teal">&nbsp;&nbsp;&nbsp;</span> <label class="w3-label w3-text-teal"><b>FG</b></label><input class="w3-input w3-round" type="number" id="fginput" value="1.010" step="0.001">
-	</td><td colspan="2">ABV: <output id="abv"></output>%</td></tr>
+	</td><td colspan="2">netto ABV: <output id="abv"></output>%</td></tr>
 
+	<tr><td><span class="w3-badge w3-teal">g/L</span> <label class="w3-label w3-text-teal"><b>Sukker til karbonering</b></label><input class="w3-input w3-round" type="number" id="carboinput" value="6" step="1"></td><td colspan="2">netto ABV: <output id="abvcarbo"></output>%</td></tr>
 
-	<tr><td><span class="w3-badge w3-teal">g/L</span> <label class="w3-label w3-text-teal"><b>Sukker til karbonering</b></label><input class="w3-input w3-round" type="number" id="carboinput" value="6" step="1"></td><td colspan="2">ABV total: <output id="abvtot"></output>%</td></tr>
+	<tr class="w3-orange w3-xlarge"><td><b>ABV: <output id="abvtot"></output></b></td></td><td><td></td></tr>
 		
 </table>
 </form>
 
 <p><br/><br/></p>
 
+<div class="w3-container w3-teal w3-xlarge">Bitterhet</div>
+<table cellpadding="1" class="w3-table">
+<thead>
+	<tr class="w3-orange">
+		<th>Humle</th>
+		<th>Tid</th>
+		<th>IBU</th>
+	</tr>
+</thead>
+<tr>
+	<td><span class="w3-badge w3-teal">Alfa %</span> <label class="w3-label w3-text-teal"><b>Humle</b></label><input class="w3-input w3-round" type="number" id="alfa1" value="0.0" step="0.5"></td><td>&nbsp;<output id="hgram"></output>g</td><td>
+	<output id="nibu"></output></td>
+</tr>
+</table>
 
-<table cellpadding="1" class="w3-table"><tr><td>
-<div class="w3-label w3-text-teal"><b>Konvertering av temperatur:</b></div>
-<center>
-<form oninput="temp()">
-	<output id="ctemp"></output>&#8451;<br/>
-	<input type="range" id="myRange" value="18" min="0" max="100" step="0.1"><br/>
-	<output id="ftemp" ></output>&#8457;
-</form>
-</center>
-</td></tr></table>	
+
+<p><br/><br/></p>
+
+<table cellpadding="1" class="w3-table">
+<tr><td>
+	<div class="w3-label w3-text-teal"><b>Konvertering av temperatur:</b></div>
+	<center>
+	<form oninput="temp()">
+		<output id="ctemp"></output>&#8451;<br/>
+		<input type="range" id="myRange" value="18" min="0" max="100" step="0.1"><br/>
+		<output id="ftemp" ></output>&#8457;
+	</form>
+	</center>
+</td></tr>
+</table>	
+
+
+
+
+
+
+
 
 
 </body>
