@@ -1,0 +1,14 @@
+<svg 
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="600" height="600" 
+  viewBox="0 0 600 600">
+
+  <path id="circle" d="M 300 100 A 195 195 360 1 1 299.999 100" style="stroke:none; fill:none;"/>
+  <text style="font-size:41px;font-family:´Source Code Pro´,monospace;" transform="translate(0 0) rotate(64 300 300)">
+      <textPath xlink:href="#circle">
+            Dælenenga nanobryggeri - Dælenenga nanobryggeri - 
+      </textPath>
+  </text>
+  <text style="font-size:420px;font-family:´Source Code Pro´,monospace;" x="192" y="414">D</text>
+</svg>
