@@ -6,7 +6,7 @@
 
 
   <path id="circle" d="M 300 100 A 195 195 360 1 1 299.999 100" style="stroke:none; fill:none;"/>
-  <text style="font-size:41px;fill:#ffffff;font-weight:bold;font-family:´Source Code Pro´,monospace;" transform="translate(0 0) rotate(64 300 300)">
+  <text style="font-size:41px;fill:#ffffff;font-weight:bolder;font-family:´Source Code Pro´,monospace;" transform="translate(0 0) rotate(64 300 300)">
       <textPath xlink:href="#circle">
             Dælenenga nanobryggeri - Dælenenga nanobryggeri - 
       </textPath>
