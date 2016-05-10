@@ -4,11 +4,18 @@
   width="600" height="600" 
   viewBox="0 0 600 600">
 
-  <path id="circle" d="M 300 100 A 195 195 360 1 1 299.999 100" style="stroke:none; fill:none;"/>
-  <text style="font-size:41px;font-family:´Source Code Pro´,monospace;" transform="translate(0 0) rotate(64 300 300)">
-      <textPath xlink:href="#circle">
-            Dælenenga nanobryggeri - Dælenenga nanobryggeri - 
-      </textPath>
+
+  <path id="circle" d="M 300 110 A 195 195 360 1 1 299.999 110" style="stroke:none; fill:none; opacity:0.4;"/>
+  <text style="font-size:72px;fill:#000000;font-weight:bolder;font-family:´Source Code Pro´,monospace;" transform="translate(0 10) rotate(-139 300 300)">
+      <textPath xlink:href="#circle">Dælenenga nanobryggeri</textPath>
   </text>
-  <text style="font-size:420px;font-family:´Source Code Pro´,monospace;" x="192" y="414">D</text>
+
+  <path id="circle2" d="M 300 110 A 195 195 360 1 0 299.999 110" style="stroke:none; fill:none; opacity:0.4;"/>
+  <text style="font-size:72px;fill:#000000;font-weight:bolder;font-family:´Source Code Pro´,monospace;" transform="translate(-154 396) rotate(24 300 300)">
+      <textPath xlink:href="#circle2">2008</textPath>
+  </text>
+
+  <text style="font-size:420px;fill:#000000;font-weight:bold;font-family:´Source Code Pro´,monospace;" x="184" y="428">D</text>
+
+
 </svg>
