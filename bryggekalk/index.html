@@ -25,6 +25,7 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-TileImage" content="./favicons/mstile-144x144.png">
 	<meta name="theme-color" content="#ffffff">
+	
 	<style>
 		.material-icons{vertical-align:-26%}
 		.iconcolor {color:#fff !important; background-color:#00467f !important}
@@ -202,60 +203,60 @@
 <div class="w3-container w3-teal w3-large"><b>Beregn bitterhet (Tinseth)</b></div>
 <form oninput="ibu()">
 <table cellpadding="1" class="w3-table">
-<thead>
-	<tr class="w3-teal">
-		<th>Humlemengde</th>
-		<th>Alfasyre</th>
-		<th>Koketid</th>
-		<th>IBU</th>
+	<thead>
+		<tr class="w3-teal">
+			<th>Humlemengde</th>
+			<th>Alfasyre</th>
+			<th>Koketid</th>
+			<th>IBU</th>
+		</tr>
+	</thead>
+	<tr>
+		<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass1" value="15" step="5"></td>
+
+		<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa1" value="10.0" step="0.5"></td>
+
+		<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time1" value="60" step="5"></td>
+
+		<td><output id="ibu1"></output></td>
 	</tr>
-</thead>
-<tr>
-	<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass1" value="15" step="5"></td>
+	<tr>
+		<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass2" value="0" step="5"></td>
 
-	<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa1" value="10.0" step="0.5"></td>
+		<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa2" value="10.0" step="0.5"></td>
 
-	<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time1" value="60" step="5"></td>
+		<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time2" value="30" step="5"></td>
 
-	<td><output id="ibu1"></output></td>
-</tr>
-<tr>
-	<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass2" value="0" step="5"></td>
+		<td><output id="ibu2"></output></td>
+	</tr>
+	<tr>
+		<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass3" value="0" step="5"></td>
 
-	<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa2" value="10.0" step="0.5"></td>
+		<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa3" value="10.0" step="0.5"></td>
 
-	<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time2" value="30" step="5"></td>
+		<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time3" value="15" step="5"></td>
 
-	<td><output id="ibu2"></output></td>
-</tr>
-<tr>
-	<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass3" value="0" step="5"></td>
+		<td><output id="ibu3"></output></td>
+	</tr>
+	<tr>
+		<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass4" value="20" step="5"></td>
 
-	<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa3" value="10.0" step="0.5"></td>
+		<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa4" value="10.0" step="0.5"></td>
 
-	<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time3" value="15" step="5"></td>
+		<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time4" value="10" step="5"></td>
 
-	<td><output id="ibu3"></output></td>
-</tr>
-<tr>
-	<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass4" value="20" step="5"></td>
+		<td><output id="ibu4"></output></td>
+	</tr>
+	<tr>
+		<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass5" value="0" step="5"></td>
 
-	<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa4" value="10.0" step="0.5"></td>
+		<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa5" value="10.0" step="0.5"></td>
 
-	<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time4" value="10" step="5"></td>
+		<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time5" value="5" step="5"></td>
 
-	<td><output id="ibu4"></output></td>
-</tr>
-<tr>
-	<td><span class="w3-badge w3-teal">g</span><input class="w3-input w3-round" type="number" id="mass5" value="0" step="5"></td>
-
-	<td><span class="w3-badge w3-teal">Alfa %</span><input class="w3-input w3-round" type="number" id="alfa5" value="10.0" step="0.5"></td>
-
-	<td><span class="w3-badge w3-teal">min</span><input class="w3-input w3-round" type="number" id="time5" value="5" step="5"></td>
-
-	<td><output id="ibu5"></output></td>
-</tr>
-<tr class="w3-orange w3-xlarge"><td colspan="4"><b>IBU: <output id="ibutot"></output></b></td></tr>
+		<td><output id="ibu5"></output></td>
+	</tr>
+	<tr class="w3-orange w3-xlarge"><td colspan="4"><b>IBU: <output id="ibutot"></output></b></td></tr>
 </table>
 </form>
 
@@ -263,16 +264,16 @@
 <p><br/><br/></p>
 
 <table cellpadding="1" class="w3-table">
-<tr><td>
-	<div class="w3-label w3-text-teal"><b>Konvertering av temperatur:</b></div>
-	<center>
-	<form oninput="temp()">
-		<output id="ctemp"></output>&#8451;<br/>
-		<input type="range" id="myRange" value="18" min="0" max="100" step="0.1"><br/>
-		<output id="ftemp" ></output>&#8457;
-	</form>
-	</center>
-</td></tr>
+	<tr><td>
+		<div class="w3-label w3-text-teal"><b>Konvertering av temperatur:</b></div>
+		<center>
+		<form oninput="temp()">
+			<output id="ctemp"></output>&#8451;<br/>
+			<input type="range" id="myRange" value="18" min="0" max="100" step="0.1"><br/>
+			<output id="ftemp" ></output>&#8457;
+		</form>
+		</center>
+	</td></tr>
 </table>	
 
 
