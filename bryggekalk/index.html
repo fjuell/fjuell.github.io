@@ -94,7 +94,7 @@
 	
 	function fabv() {
 		var fg = document.getElementById("fginput").value;
-		var og = document.getElementById('g').value;
+		var og = document.getElementById('oginput').value;
 		var carbo = parseFloat(document.getElementById('carboinput').value);
 		/* Simple formula: */
 		/* document.getElementById('abv').value = ((og-fg)*131.25).toFixed(1); */
@@ -104,6 +104,10 @@
 		document.getElementById('abvcarbo').value = (carbo/17.0).toFixed(2);
 		document.getElementById('abvtot').value = (abvx + (carbo / 17.0)).toFixed(2);
 	};	
+
+	function setInput() {
+		document.getElementById('oginput').value = document.getElementById('g').value
+	};
 
 	function ibu() {
 		var og = document.getElementById('g').value;
@@ -179,19 +183,31 @@
 
 <p><br/><br/></p>
 
+
+<!-- <div class="w3-container w3-teal w3-large"><b>ABV</b></div> -->
 <table cellpadding="1" class="w3-table">
 	<thead>
 		<tr class="w3-teal">
 			<th>Beregn ABV</th>
 			<th>Netto ABV</th>
 		</tr>
-	</thead>	
-	<tr><td colspan="1"><span class="w3-badge w3-teal">&nbsp;&nbsp;&nbsp;</span> <label class="w3-label w3-text-teal"><b>FG</b></label><input class="w3-input w3-round" type="number" id="fginput" value="1.010" step="0.001">
-	</td><td colspan="1"><output id="abv"></output>%</td></tr>
-
-	<tr><td><span class="w3-badge w3-teal">g/L</span> <label class="w3-label w3-text-teal"><b>Sukker til karbonering</b></label><input class="w3-input w3-round" type="number" id="carboinput" value="6" step="1"></td><td colspan="1"><output id="abvcarbo"></output>%</td></tr>
-
-	<tr class="w3-orange w3-xlarge"><td colspan="2"><b>ABV: <output id="abvtot"></output>%</b></td>
+	</thead>
+	<tr>
+		<td><span class="w3-badge w3-teal">&nbsp;&nbsp;&nbsp;</span> <label class="w3-label w3-text-teal"><b>OG målt</b></label>
+		<input class="w3-input w3-round" type="number" id="oginput" value="1.050" step="0.001">
+		</td><td>
+		<br/>
+		<input type="button" class="w3-btn w3-round w3-large w3-teal" value="Bruk beregnet OG" onclick="setInput(),fabv()">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="1"><span class="w3-badge w3-teal">&nbsp;&nbsp;&nbsp;</span> <label class="w3-label w3-text-teal"><b>FG</b></label><input class="w3-input w3-round" type="number" id="fginput" value="1.010" step="0.001"></td><td colspan="1"><output id="abv"></output>%</td>
+	</tr>
+	<tr>
+		<td><span class="w3-badge w3-teal">g/L</span> <label class="w3-label w3-text-teal"><b>Sukker til karbonering</b></label><input class="w3-input w3-round" type="number" id="carboinput" value="6" step="1"></td><td colspan="1"><output id="abvcarbo"></output>%</td>
+	</tr>
+	<tr class="w3-orange w3-xlarge">
+		<td colspan="2"><b>ABV: <output id="abvtot"></output>%</b></td>
 	</tr>
 		
 </table>
