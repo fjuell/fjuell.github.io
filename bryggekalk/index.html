@@ -282,7 +282,7 @@
 <p><br/><br/></p>
 
 <center>
-	<button class="w3-btn w3-round w3-large w3-teal" onclick="viewFormattedData()">Data i TXT</button>
+	<button class="w3-btn w3-round w3-large w3-teal" onclick="viewFormattedData()">Sammendrag i TXT&nbsp;&nbsp;<i class="material-icons">open_in_new</i></button>
 </center>
 <script>
 	function viewFormattedData () {
@@ -383,7 +383,7 @@
 		<form oninput="gOz()">
 			<output id="oz"></output> oz<br/>
 			<input type="range" id="myRangeW" value="1.0" min="0" max="10" step="0.01"><br/>
-			<output id="gram" ></output> g
+			<output id="gram"></output> g
 		</form>
 		</center>
 	</td></tr>
@@ -393,9 +393,21 @@
 
 
 
+<footer class="w3-container w3-teal">
+	<div class="w3-small">
+		Sist oppdatert: <span id="lastMod"></span><br/>
+		&copy;&nbsp;Dælenenga nanobryggeri
+	</div>
+</footer>
 
+<script>
+	var lm = new  Date(document.lastModified);
+	document.getElementById("lastMod").innerHTML = ""+lm.getDate()+"/"+(lm.getMonth()+1)+"-"+lm.getFullYear()+"";
+</script>
 
-
+<!--
++", kl. "+lm.getHours()+":"+lm.getMinutes()+":"+lm.getSeconds()
+-->
 
 </body>
 </html>
