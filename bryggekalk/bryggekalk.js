@@ -191,6 +191,9 @@ var lm = new  Date(document.lastModified);
 	document.getElementById("lastMod").innerHTML = ""+lm.getDate()+"/"+(lm.getMonth()+1)+"-"+lm.getFullYear()+"";
 
 
+/*
+	+", kl. "+lm.getHours()+":"+lm.getMinutes()+":"+lm.getSeconds()
+*/
 
 
 
