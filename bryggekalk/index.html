@@ -43,7 +43,10 @@
     		border-radius: 4px;
 		}
 	</style>
+
+	<script src="./bryggekalk.js" async></script>
 	
+	<!--
 	<script> 
 	function x() {
 		document.getElementById('g').value = ((1000 +
@@ -145,6 +148,7 @@
 		document.getElementById("gram").innerHTML = gx;
 	};
 	</script>
+	-->
 </head>
 
 <body onload="f(),x(),p(),imp(),fabv(),ibu(),temp(),gOz()" class="w3-light-grey">
@@ -284,6 +288,8 @@
 <center>
 	<button class="w3-btn w3-round w3-large w3-teal" onclick="viewFormattedData()">Sammendrag i TXT&nbsp;&nbsp;<i class="material-icons">open_in_new</i></button>
 </center>
+
+<!--
 <script>
 	function viewFormattedData () {
 		/* Malt og vann */
@@ -358,6 +364,8 @@
 	};
 </script>
 
+-->
+
 <p><br/><br/></p>
 
 
@@ -400,10 +408,12 @@
 	</div>
 </footer>
 
+<!--
 <script>
 	var lm = new  Date(document.lastModified);
 	document.getElementById("lastMod").innerHTML = ""+lm.getDate()+"/"+(lm.getMonth()+1)+"-"+lm.getFullYear()+"";
 </script>
+-->
 
 <!--
 +", kl. "+lm.getHours()+":"+lm.getMinutes()+":"+lm.getSeconds()
