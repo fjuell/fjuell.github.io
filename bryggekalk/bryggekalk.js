@@ -1,3 +1,5 @@
+
+// Beregn OG
 function x() {
 		document.getElementById('g').value = ((1000 +
 			(
@@ -17,6 +19,7 @@ function x() {
 		)/1000).toFixed(3);
 	};
 	
+	// Total masse
 	function f() {
 		//var m = $('#m').val();		
 		document.getElementById('m').value = (
@@ -27,6 +30,7 @@ function x() {
 		).toFixed(2);
 	};
 	
+	// Andel i prosent
 	function p() {
 		document.getElementById('pbasis').value = ((100*parseFloat(document.getElementById('basis').value)) / document.getElementById('m').value).toFixed(0);
 		document.getElementById('pspes').value = ((100*parseFloat(document.getElementById('spes').value)) / document.getElementById('m').value).toFixed(0);
@@ -34,6 +38,7 @@ function x() {
 		document.getElementById('pdme').value = ((100*parseFloat(document.getElementById('dme').value)) / document.getElementById('m').value).toFixed(0);
 	};
 
+	// Amerikanskel mål
 	function imp() {
 		document.getElementById('lbbasis').value = (parseFloat(document.getElementById('basis').value) * 2.2046).toFixed(1);
 		document.getElementById('lbspes').value = (parseFloat(document.getElementById('spes').value) * 2.2046).toFixed(1);
@@ -43,6 +48,7 @@ function x() {
 		document.getElementById('galvol').value = (parseFloat(document.getElementById('vol').value) / 3.7854).toFixed(1);
 	};
 	
+	// ABV
 	function fabv() {
 		var fg = document.getElementById("fginput").value;
 		var og = document.getElementById('oginput').value;
@@ -56,10 +62,12 @@ function x() {
 		document.getElementById('abvtot').value = (abvx + (carbo / 17.0)).toFixed(2);
 	};	
 
+	// Bruk beregnet OG i stedet for inntastet
 	function setInput() {
 		document.getElementById('oginput').value = document.getElementById('g').value
 	};
 
+	// Bitterhet/IBU
 	function ibu() {
 		var og = document.getElementById('g').value;
 		var v = document.getElementById('vol').value;
@@ -84,6 +92,7 @@ function x() {
 		document.getElementById('ibutot').value = (ibus[0]+ibus[1]+ibus[2]+ibus[3]+ibus[4]).toFixed(0);
 	};
 
+	// Konverteringsslider for temperatur
 	function temp() {
 		var cx = document.getElementById("myRangeT").value;
 		document.getElementById("ctemp").innerHTML = (cx*1 + 0).toFixed(1);
@@ -91,6 +100,7 @@ function x() {
 		document.getElementById("ftemp").innerHTML = fx;
 	};
 
+	// Konverteringsslider for vekt
 	function gOz() {
 		var ozx = document.getElementById("myRangeW").value;
 		document.getElementById("oz").innerHTML = (ozx*1 + 0).toFixed(2);
