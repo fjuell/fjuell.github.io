@@ -94,10 +94,10 @@ function x() {
 
 	// Konverteringsslider for temperatur
 	function temp() {
-		var cx = document.getElementById("myRangeT").value;
-		document.getElementById("ctemp").innerHTML = (cx*1 + 0).toFixed(1);
-		var fx = (cx*1.8 + 32.0).toFixed(1);
-		document.getElementById("ftemp").innerHTML = fx;
+		var fx = document.getElementById("myRangeT").value;
+		document.getElementById("ftemp").innerHTML = (fx*1 + 0).toFixed(1);
+		var cx = ((fx - 32.0)/1.8).toFixed(1);
+		document.getElementById("ctemp").innerHTML = cx;
 	};
 
 	// Konverteringsslider for vekt
