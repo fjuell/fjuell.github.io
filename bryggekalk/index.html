@@ -77,12 +77,12 @@
 	
 	<tr><td><span class="w3-badge w3-teal">kg</span> <label class="w3-label w3-text-teal"><b>Sirup/LME</b></label><input class="w3-input w3-round" type="number" id="lme" value="0.0" step="0.5"><td>&nbsp;<output id="lblme"></output>lb&nbsp;</td><td><output id="plme"></output>%</td></tr>
 	
-	<tr><td><span class="w3-badge w3-teal">kg</span> <label class="w3-label w3-text-teal"><b>Sukker/DME</b></label><input class="w3-input w3-round" type="number" id="dme" value="0.0" step="0.5"></td><td>&nbsp;<output id="lbdme"></output>lb&nbsp;</td><td>
+	<tr><td><span class="w3-badge w3-teal">kg</span> <label class="w3-label w3-text-teal"><b>Farin/DME</b></label><input class="w3-input w3-round" type="number" id="dme" value="0.0" step="0.5"></td><td>&nbsp;<output id="lbdme"></output>lb&nbsp;</td><td>
 	<output id="pdme"></output>%</td></tr>
 	
-	<tr><td><span class="w3-badge w3-teal">L</span> <label class="w3-label w3-text-teal"><b>Volum</b></label><input class="w3-input w3-round" type="number" id="vol" value="23"></td><td><output id="galvol"></output>gal&nbsp;</td><td></td></tr>
+	<tr><td><span class="w3-badge w3-teal">L</span> <label class="w3-label w3-text-teal"><b>Volum øl</b></label><input class="w3-input w3-round" type="number" id="vol" value="23"></td><td><output id="galvol"></output>gal&nbsp;</td><td></td></tr>
 	
-	<tr><td><span class="w3-badge w3-teal">%</span> <label class="w3-label w3-text-teal"><b>Utbytte</b></label><input class="w3-input w3-round" type="number" id="eff" value="75"></td><td></td><td></tr>
+	<tr><td><span class="w3-badge w3-teal">%</span> <label class="w3-label w3-text-teal"><b>Utbytte mesking</b></label><input class="w3-input w3-round" type="number" id="eff" value="75"></td><td></td><td></tr>
 	
 	<tr><td>Totalt: <output id="m"></output>kg</td><td><output id="lbtot"></output>lb&nbsp;</td></td><td></tr>
 	
@@ -96,12 +96,11 @@
 <table cellpadding="1" class="w3-table">
 	<thead>
 		<tr class="w3-teal">
-			<th>Beregn ABV</th>
-			<th>Netto ABV</th>
+			<th colspan="2">Beregn alkohol og kullsyre</th>
 		</tr>
 	</thead>
 	<tr>
-		<td><span class="w3-badge w3-teal">&nbsp;&nbsp;&nbsp;</span> <label class="w3-label w3-text-teal"><b>OG målt</b></label>
+		<td><span class="w3-badge w3-teal">&nbsp;&nbsp;&nbsp;</span> <label class="w3-label w3-text-teal"><b>OG</b></label>
 		<input class="w3-input w3-round" type="number" id="oginput" value="1.050" step="0.001">
 		</td><td>
 		<br/>
@@ -109,11 +108,26 @@
 		</td>
 	</tr>
 	<tr>
-		<td colspan="1"><span class="w3-badge w3-teal">&nbsp;&nbsp;&nbsp;</span> <label class="w3-label w3-text-teal"><b>FG</b></label><input class="w3-input w3-round" type="number" id="fginput" value="1.010" step="0.001"></td><td colspan="1"><output id="abv"></output>%</td>
+		<td colspan="1"><span class="w3-badge w3-teal">&nbsp;&nbsp;&nbsp;</span> <label class="w3-label w3-text-teal"><b>FG</b></label><input class="w3-input w3-round" type="number" id="fginput" value="1.010" step="0.001"></td><td></td>
 	</tr>
 	<tr>
-		<td><span class="w3-badge w3-teal">g/L</span> <label class="w3-label w3-text-teal"><b>Sukker til karbonering</b></label><input class="w3-input w3-round" type="number" id="carboinput" value="6" step="1"></td><td colspan="1"><output id="abvcarbo"></output>%</td>
+		<td><span class="w3-badge w3-teal">vol</span> <label class="w3-label w3-text-teal"><b>Ønskede mengde CO<sub>2</sub></b></label><input class="w3-input w3-round" type="number" id="in_vol_co2" value="2.5" step="0.1"></td>
+		<td><span class="w3-badge w3-teal">&#176;C</span> <label class="w3-label w3-text-teal"><b>Øllets temperatur</b></label><input class="w3-input w3-round" type="number" id="in_temp" value="20" step="1"></td>
 	</tr>
+	<tr>
+		<td colspan="2">
+			<b>Primingalternativer:</b> (<output id="out_co2_wort"></output> volumer CO<sub>2</sub> allerede i vørter)
+			<ul>
+				<li><b><output id="out_priming_sugar"></output>g farin</b> (<output id="out_priming_sugar_L"></output>g/L)</li>
+				<li><b><output id="out_priming_dme"></output>g DME/spraymalt</b></li>
+				<li><b><output id="out_priming_wort"></output>L vørter</b></li>
+				<!-- <li><output id="sg_points"></output> SG to add</li> -->
+			</ul>
+
+		</td>
+	</tr>
+	
+
 	<tr class="w3-orange w3-xlarge">
 		<td colspan="2"><b>ABV: <output id="abvtot"></output>%</b></td>
 	</tr>

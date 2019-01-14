@@ -50,16 +50,41 @@ function x() {
 	
 	// ABV
 	function fabv() {
-		var fg = document.getElementById("fginput").value;
-		var og = document.getElementById('oginput').value;
-		var carbo = parseFloat(document.getElementById('carboinput').value);
-		/* Simple formula: */
+		var fg = parseFloat(document.getElementById('fginput').value);
+		var og = parseFloat(document.getElementById('oginput').value);
+		var vol_w = parseFloat(document.getElementById('vol').value);
+		var vol_co2 = parseFloat(document.getElementById('in_vol_co2').value);
+		var wtemp = parseFloat(document.getElementById('in_temp').value);
+		var vol_co2_w, tempfar, vol_co2_toadd, gram_co2_toadd, ferm_true, ferm_apparent, sg_trgt
+		/* Beregne mengde priming */
+		/* Convertere til Farenheit*/
+		tempfar = 1.8*wtemp+32;
+		/* Vol CO2 allerede i vørter: */
+		vol_co2_w = 3.0378 - (0.050062 * tempfar) + (0.00026555 * tempfar*tempfar)
+		document.getElementById('out_co2_wort').value = vol_co2_w.toFixed(1);
+		/* Vol CO2 som må tilføres: */
+		vol_co2_toadd = vol_co2 - vol_co2_w;
+		gram_co2_toadd = 1.96*vol_co2_toadd;
+		/* Priming med sukrose/farin: */
+		document.getElementById('out_priming_sugar').value = (1.96*1.96*vol_w*vol_co2_toadd).toFixed(0);
+		document.getElementById('out_priming_sugar_L').value = (1.96*1.96*vol_co2_toadd).toFixed(0);
+		/* Priming med DME */
+		document.getElementById('out_priming_dme').value = (1.96*1.96*vol_w*vol_co2_toadd/(0.82*0.80)).toFixed(0);
+		/* Priming med rest av vørter fra samme brygg */
+		/* Beregne utgjæringsgraden for øllet: */
+		ferm_apparent = (og-fg)/(og-1.0)
+		ferm_true = 0.82*ferm_apparent;
+		/* Using rule of thumb: 1 point SG gives approx 0.5 volumes CO2 when fermented */
+		sg_trgt = fg+vol_co2_toadd*0.002;
+		/* document.getElementById('sg_points').value = (sg_trgt-fg).toFixed(5); */
+		document.getElementById('out_priming_wort').value = (vol_w*(fg-sg_trgt)/(sg_trgt-og)).toFixed(2);
+
+
+		/* Simple formula for ABV: */
 		/* document.getElementById('abv').value = ((og-fg)*131.25).toFixed(1); */
 		/* Advanced formula, more accurate for higher abv: */
-		document.getElementById('abv').value = ((76.08 * (og-fg) / (1.775-og)) * (fg / 0.794)).toFixed(2);
-		var abvx = parseFloat(document.getElementById('abv').value);
-		document.getElementById('abvcarbo').value = (carbo/17.0).toFixed(2);
-		document.getElementById('abvtot').value = (abvx + (carbo / 17.0)).toFixed(2);
+		document.getElementById('abvtot').value = ((76.08 * (og-fg) / (1.775-og)) * (fg / 0.794)).toFixed(1);
+		
 	};	
 
 	// Bruk beregnet OG i stedet for inntastet
