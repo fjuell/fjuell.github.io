@@ -50,16 +50,18 @@
     }
 
     .radio-button-container label {
+      color: #0b1222;
+      font-weight: bold;
       display: inline-block;
       padding: 10px 10px;
-      border: 1px solid #ccc;
+      /*border: 1px solid #555;*/
       cursor: pointer;
-      background-color: #fff;
+      background-color: #d0dfe6;
     }
 
     .radio-button-container input[type="radio"]:checked + label {
-      background-color: #ddd;
-      border-color: #4c4;
+      background-color: #f00;
+      border-color: #f00;
     }
 
     .radio-button-container input[type="radio"]:focus + label {
@@ -67,20 +69,21 @@
     }
 
     .radio-button-container label:hover {
-      background-color: #dfd;
+      background-color: #f00;
     }
   </style>
 
 
-  <body>
+  <body class="fdm-cyan fdm-darkblue">
     <div class="w3-containter">
-    <h1>MIDI Program Change Calculator</h1>
+    <h1>MIDI Prog Change Calc</h1>
     <p>
-      Enter the values for card, bank, and patch below, then click the "Calculate" button to get the corresponding PC value.
+      Enter the values for card, bank, and patch below, and get Program Change (PC) value.
     </p>
 
+    <div class="w3-panel w3-border">
     <h2>Roland JP-08</h2>
-    <div class="radio-button-container">
+    <div class="radio-button-container w3-monospace w3-padding-small">
       <input type="radio" name="bank_jp08" id="b1_jp08" value=1 onclick="calculatePC_JP08(this)" checked><label for="b1_jp08">1</label>
       <input type="radio" name="bank_jp08" id="b2_jp08" value=2 onclick="calculatePC_JP08(this)"><label for="b2_jp08">2</label>
       <input type="radio" name="bank_jp08" id="b3_jp08" value=3 onclick="calculatePC_JP08(this)"><label for="b3_jp08">3</label>
@@ -90,7 +93,7 @@
       <input type="radio" name="bank_jp08" id="b7_jp08" value=7 onclick="calculatePC_JP08(this)"><label for="b7_jp08">7</label>
       <input type="radio" name="bank_jp08" id="b8_jp08" value=8 onclick="calculatePC_JP08(this)"><label for="b8_jp08">8</label>
     </div>
-    <div class="radio-button-container">
+    <div class="radio-button-container w3-monospace w3-padding-small">
       <input type="radio" name="patch_jp08" id="p1_jp08" value=1 onclick="calculatePC_JP08(this)" checked><label for="p1_jp08">1</label>
       <input type="radio" name="patch_jp08" id="p2_jp08" value=2 onclick="calculatePC_JP08(this)"><label for="p2_jp08">2</label>
       <input type="radio" name="patch_jp08" id="p3_jp08" value=3 onclick="calculatePC_JP08(this)"><label for="p3_jp08">3</label>
@@ -100,12 +103,14 @@
       <input type="radio" name="patch_jp08" id="p7_jp08" value=7 onclick="calculatePC_JP08(this)"><label for="p7_jp08">7</label>
       <input type="radio" name="patch_jp08" id="p8_jp08" value=8 onclick="calculatePC_JP08(this)"><label for="p8_jp08">8</label>
     </div>  
-    <label for="result_jp08">Result:</label>
-    <span id="result_jp08"></span>
+    <h3><label class="w3-label" for="result_jp08">PC:</label>
+    <output class="" id="result_jp08"></output></h3>
+    </div>
 
-    
+
+    <div class="w3-panel w3-border">
     <h2>Roland D-05</h2>
-    <div class="radio-button-container">
+    <div class="radio-button-container w3-monospace w3-padding-small">
       <input type="radio" name="card_d05" id="c1_d05" value="p1" onclick="calculatePC_D05(this)" checked><label for="c1_d05">P1</label>
       <input type="radio" name="card_d05" id="c2_d05" value="p2" onclick="calculatePC_D05(this)"><label for="c2_d05">P2</label>
       <input type="radio" name="card_d05" id="c3_d05" value="p3" onclick="calculatePC_D05(this)"><label for="c3_d05">P3</label>
@@ -113,7 +118,7 @@
       <input type="radio" name="card_d05" id="c5_d05" value="p5" onclick="calculatePC_D05(this)"><label for="c5_d05">P5</label>
       <input type="radio" name="card_d05" id="c6_d05" value="p6" onclick="calculatePC_D05(this)"><label for="c6_d05">P6</label>
     </div>
-    <div class="radio-button-container">
+    <div class="radio-button-container w3-monospace w3-padding-small">
       <input type="radio" name="card_d05" id="c7_d05" value="u1" onclick="calculatePC_D05(this)"><label for="c7_d05">U1</label>
       <input type="radio" name="card_d05" id="c8_d05" value="u2" onclick="calculatePC_D05(this)"><label for="c8_d05">U2</label>
       <input type="radio" name="card_d05" id="c9_d05" value="u3" onclick="calculatePC_D05(this)"><label for="c9_d05">U3</label>
@@ -123,8 +128,8 @@
       <input type="radio" name="card_d05" id="cd_d05" value="u7" onclick="calculatePC_D05(this)"><label for="cd_d05">U7</label>
       <input type="radio" name="card_d05" id="ce_d05" value="u8" onclick="calculatePC_D05(this)"><label for="ce_d05">U8</label>
     </div>
-  
-    <div class="radio-button-container">
+    <br/>
+    <div class="radio-button-container w3-monospace w3-padding-small">
       <input type="radio" name="bank_d05" id="b1_d05" value=1 onclick="calculatePC_D05(this)" checked><label for="b1_d05">1</label>
       <input type="radio" name="bank_d05" id="b2_d05" value=2 onclick="calculatePC_D05(this)"><label for="b2_d05">2</label>
       <input type="radio" name="bank_d05" id="b3_d05" value=3 onclick="calculatePC_D05(this)"><label for="b3_d05">3</label>
@@ -134,7 +139,7 @@
       <input type="radio" name="bank_d05" id="b7_d05" value=7 onclick="calculatePC_D05(this)"><label for="b7_d05">7</label>
       <input type="radio" name="bank_d05" id="b8_d05" value=8 onclick="calculatePC_D05(this)"><label for="b8_d05">8</label>
     </div>
-    <div class="radio-button-container">
+    <div class="radio-button-container w3-monospace w3-padding-small">
       <input type="radio" name="patch_d05" id="p1_d05" value=1 onclick="calculatePC_D05(this)" checked><label for="p1_d05">1</label>
       <input type="radio" name="patch_d05" id="p2_d05" value=2 onclick="calculatePC_D05(this)"><label for="p2_d05">2</label>
       <input type="radio" name="patch_d05" id="p3_d05" value=3 onclick="calculatePC_D05(this)"><label for="p3_d05">3</label>
@@ -144,10 +149,10 @@
       <input type="radio" name="patch_d05" id="p7_d05" value=7 onclick="calculatePC_D05(this)"><label for="p7_d05">7</label>
       <input type="radio" name="patch_d05" id="p8_d05" value=8 onclick="calculatePC_D05(this)"><label for="p8_d05">8</label>
     </div>  
-    <label for="result_d05">Result:</label>
-    <span id="result_d05"></span>
+    <h3><label for="result_d05">MSB-LSB-PC:</label>
+    <output class="" id="result_d05"></output></h3>
   </div>
-
+  </div>
 
   </body>
 </html>
