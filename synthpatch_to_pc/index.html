@@ -54,6 +54,7 @@
       font-weight: bold;
       display: inline-block;
       padding: 10px 10px;
+      border-radius: 6px;
       /*border: 1px solid #555;*/
       cursor: pointer;
       background-color: #d0dfe6;
@@ -74,14 +75,14 @@
   </style>
 
 
-  <body class="fdm-cyan fdm-darkblue w3-xxlarge">
+  <body class="fdm-cyan fdm-darkblue">
     <div class="w3-containter">
     <h1>MIDI Prog Change Calc</h1>
     <p>
       Enter the values for card, bank, and patch below, and get Program Change (PC) value.
     </p>
 
-    <div class="w3-panel w3-border">
+    <div class="w3-panel w3-border w3-xxxlarge">
     <h2>Roland JP-08</h2>
     <div class="radio-button-container w3-monospace w3-padding-small">
       <input type="radio" name="bank_jp08" id="b1_jp08" value=1 onclick="calculatePC_JP08(this)" checked><label for="b1_jp08">1</label>
@@ -104,11 +105,11 @@
       <input type="radio" name="patch_jp08" id="p8_jp08" value=8 onclick="calculatePC_JP08(this)"><label for="p8_jp08">8</label>
     </div>  
     <h3><label class="w3-label" for="result_jp08">PC: </label>
-    <output class="fdm-yellow-box w3-padding-small w3-round w3-xxlarge" id="result_jp08"></output></h3>
+    <output class="fdm-yellow-box w3-round w3-xxlarge" id="result_jp08"> </output></h3>
     </div>
 
 
-    <div class="w3-panel w3-border">
+    <div class="w3-panel w3-border w3-xxxlarge">
     <h2>Roland D-05</h2>
     <div class="radio-button-container w3-monospace w3-padding-small">
       <input type="radio" class="w3-round" name="card_d05" id="c1_d05" value="p1" onclick="calculatePC_D05(this)" checked><label for="c1_d05">P1</label>
@@ -150,7 +151,7 @@
       <input type="radio" name="patch_d05" id="p8_d05" value=8 onclick="calculatePC_D05(this)"><label for="p8_d05">8</label>
     </div>  
     <h3><label for="result_d05">MSB-LSB-PC: </label>
-    <output class="fdm-yellow-box w3-padding-small w3-round w3-xxlarge" id="result_d05"></output></h3>
+    <output class="fdm-yellow-box w3-round w3-xxlarge" id="result_d05"></output></h3>
   </div>
   </div>
 
