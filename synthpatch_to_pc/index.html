@@ -17,7 +17,7 @@
         var lsb_map = {'u1':'000','u2':'001','u3':'002','u4':'003','u5':'004','u6':'005','u7':'006','u8':'007','p1':'008','p2':'009','p3':'010','p4':'011','p5':'012','p6':'013'};
         var lsb = lsb_map[card.toLowerCase()];
         var pc = (bank-1)*8 + patch;
-        return `${msb}-${lsb}-${pc.toString().padStart(3, '0')}`;
+        return [msb, lsb, pc.toString().padStart(3, '0')];
       }
 
       function calculatePC_JP08() {
@@ -35,9 +35,11 @@
         var bank = parseInt(document.querySelector('input[name="bank_d05"]:checked').value);
         var patch = parseInt(document.querySelector('input[name="patch_d05"]:checked').value);
 
-        var pc = d05_to_pc(card, bank, patch);
+        var [msb, lsb, pc] = d05_to_pc(card, bank, patch);
+        document.getElementById("result_d05_msb").innerHTML = msb;
+        document.getElementById("result_d05_lsb").innerHTML = lsb;
+        document.getElementById("result_d05_pc").innerHTML = pc;
 
-        document.getElementById("result_d05").innerHTML = pc;
       }
 
     </script>
@@ -105,8 +107,10 @@
       <input type="radio" name="patch_jp08" id="p7_jp08" value=7 onclick="calculatePC_JP08(this)"><label for="p7_jp08">7</label>
       <input type="radio" name="patch_jp08" id="p8_jp08" value=8 onclick="calculatePC_JP08(this)"><label for="p8_jp08">8</label>
     </div>  
-    <h3><output class="fdm-yellow-box w3-round w3-padding-small w3-jumbo" id="result_jp08">000</output><label class="fdm-green-box w3-round w3-padding-small w3-jumbo" for="result_jp08">PC</label>
+    <div class="w3-left-align">
+    <h3><label class="fdm-green-box w3-round" style="writing-mode: vertical-lr; text-orientation:upright; text-align:center; vertical-align: -18px; height:80px" for="result_jp08">PC</label><output class="fdm-yellow-box w3-round w3-padding-small w3-jumbo" id="result_jp08">000</output>
     </h3>
+    </div>
     </div>
 
 
@@ -153,7 +157,9 @@
       <input type="radio" name="patch_d05" id="p7_d05" value=7 onclick="calculatePC_D05(this)"><label for="p7_d05">7</label>
       <input type="radio" name="patch_d05" id="p8_d05" value=8 onclick="calculatePC_D05(this)"><label for="p8_d05">8</label>
     </div>  
-    <h3><output class="fdm-yellow-box w3-round w3-padding-small w3-jumbo" id="result_d05">087-008-001</output><label class="fdm-green-box w3-round w3-padding-small w3-jumbo" for="result_d05">MSB-LSB-PC</label>
+    <h3><label class="fdm-green-box w3-round" style="writing-mode: vertical-lr; text-orientation:upright; text-align:center; vertical-align: -18px; height:80px" for="result_d05_msb">MSB</label><output class="fdm-yellow-box w3-round w3-padding-small w3-jumbo" id="result_d05_msb">087</output>
+      <label class="fdm-green-box w3-round" style="writing-mode: vertical-lr; text-orientation:upright; text-align:center; vertical-align: -18px; height:80px" for="result_d05_lsb">LSB</label><output class="fdm-yellow-box w3-round w3-padding-small w3-jumbo" id="result_d05_lsb">008</output>
+      <label class="fdm-green-box w3-round" style="writing-mode: vertical-lr; text-orientation:upright; text-align:center; vertical-align: -18px; height:80px" for="result_d05_pc">PC</label><output class="fdm-yellow-box w3-round w3-padding-small w3-jumbo" id="result_d05_pc">001</output>
     </h3>
   </div>
   </div>
