@@ -5,17 +5,17 @@
 <link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="css/f-darkmatter.css">
 <head>
-	<title>Fredriks bokmerker</title>
-	<style>
-		a:link, a:visited {
-		    /*width: 100%;
-		    height: 100%;*/
-		    text-decoration: none;
-		    text-align: left;
-		}
-	</style>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script src="bm.js"></script>
+    <title>Fredriks bokmerker</title>
+    <style>
+        a:link, a:visited {
+            /*width: 100%;
+            height: 100%;*/
+            text-decoration: none;
+            text-align: left;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="bm.js"></script>
 </head>
 
 <!-- 
@@ -26,43 +26,43 @@ L E N K E Ø N S K E R:
 <body id="body" class="fdm-cyan">
 
 <div id="fhead" class="w3-container w3-border-bottom fdm-border-cyan fdm-cyan">
-	<h1>Fredriks bokmerker</h1><br/>
-	<div align="right">
-		<div id="skrankeButton" class="w3-btn w3-border-bottom fdm-border-blue fdm-highlight" onclick="showSkranke()">Skranke</div>
-		<div id="progButton" class="w3-btn w3-border-bottom fdm-border-blue fdm-green" onClick="showProgrammering()">Programmering</div>
-		<!-- <button class="w3-btn" onclick="changeClass()">Stealth mode</button> -->
+    <h1>Fredriks bokmerker</h1><br/>
+    <div align="right">
+        <div id="skrankeButton" class="w3-btn w3-border-bottom fdm-border-blue fdm-highlight" onclick="showSkranke()">Skranke</div>
+        <div id="progButton" class="w3-btn w3-border-bottom fdm-border-blue fdm-green" onClick="showProgrammering()">Programmering</div>
+        <!-- <button class="w3-btn" onclick="changeClass()">Stealth mode</button> -->
 
-	</div>
+    </div>
 </div>
 
 
 <div class="w3-row-padding">
 <div class="w3-third">
   <h2>Alma</h2>
-  	<a id="skranke" class="w3-btn w3-border-bottom fdm-border-blue fdm-highlight fdm-hover w3-btn-block" href="https://bibsys-tb.alma.exlibrisgroup.com/mng/login?auth=SAML"  target="_blank">Alma BI</a>
-  	<a class="w3-btn w3-border-bottom fdm-border-blue w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://bibsys-tb-psb.alma.exlibrisgroup.com/mng/login?auth=local" target="_blank">Alma Sandbox 7</a>
-  	<a class="w3-btn w3-border-bottom fdm-border-blue w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://bibsys-tb.alma.exlibrisgroup.com/mng/login?auth=SAML" target="_blank">Alma via Feide, utenom Bibsys</a>
-  	<a class="w3-btn w3-border-bottom fdm-border-blue w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://bibsys-tb.alma.exlibrisgroup.com/mng/login?institute=47BIBSYS_BI&auth=local" target="_blank">Alma Native Login</a>
-  	<a class="w3-btn w3-border-bottom fdm-border-blue w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://knowledge.exlibrisgroup.com/Alma" target="_blank">Knowledge Center</a>
+    <a id="skranke" class="w3-btn w3-border-bottom fdm-border-blue fdm-highlight fdm-hover w3-btn-block" href="https://bibsys-tb.alma.exlibrisgroup.com/mng/login?auth=SAML"  target="_blank">Alma BI</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://bibsys-tb-psb.alma.exlibrisgroup.com/mng/login?auth=local" target="_blank">Alma Sandbox 7</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://bibsys-tb.alma.exlibrisgroup.com/mng/login?auth=SAML" target="_blank">Alma via Feide, utenom Bibsys</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://bibsys-tb.alma.exlibrisgroup.com/mng/login?institute=47BIBSYS_BI&auth=local" target="_blank">Alma Native Login</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://knowledge.exlibrisgroup.com/Alma" target="_blank">Knowledge Center</a>
 </div>
 
 <div class="w3-third">
-	<h2>Oria / Primo / Discovery</h2>
-	<a id="skranke" class="w3-btn w3-border-bottom fdm-border-blue fdm-highlight fdm-hover w3-btn-block" href="http://bi.oria.no/" target="_blank">Oria BI</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://bibsys-almaprimo.hosted.exlibrisgroup.com/primo-explore/search?vid=BI&lang=no_NO" target="_blank">Oria BI - UI 2016</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://bibsys-almaprimo.hosted.exlibrisgroup.com:1601/primo_publishing/admin/acegilogin.jsp" target="_blank">Primo Back Office Production</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://bibsys-primo-sb.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?vid=BI&afterPDS=true" target="_blank">Oria BI SANDBOX</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://bibsys-primostg.hosted.exlibrisgroup.com:1601/primo_publishing/admin/acegilogin.jsp" target="_blank">Primo Back Office SANDBOX</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://talisaspire.basecamphq.com/projects/13914469-bi-norwegian-business-school-tadc-data-import/log" target="_blank">Talis Basecamp - TADC Data Import</a>
+    <h2>Oria / Primo / Discovery</h2>
+    <a id="skranke" class="w3-btn w3-border-bottom fdm-border-blue fdm-highlight fdm-hover w3-btn-block" href="http://bi.oria.no/" target="_blank">Oria BI</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://bibsys-almaprimo.hosted.exlibrisgroup.com/primo-explore/search?vid=BI&lang=no_NO" target="_blank">Oria BI - UI 2016</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://bibsys-almaprimo.hosted.exlibrisgroup.com:1601/primo_publishing/admin/acegilogin.jsp" target="_blank">Primo Back Office Production</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://bibsys-primo-sb.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?vid=BI&afterPDS=true" target="_blank">Oria BI SANDBOX</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://bibsys-primostg.hosted.exlibrisgroup.com:1601/primo_publishing/admin/acegilogin.jsp" target="_blank">Primo Back Office SANDBOX</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://talisaspire.basecamphq.com/projects/13914469-bi-norwegian-business-school-tadc-data-import/log" target="_blank">Talis Basecamp - TADC Data Import</a>
 </div>
 
 <div class="w3-third">
-	<h2>BI</h2>
-	<a id="skranke" class="w3-btn w3-border-bottom fdm-border-blue fdm-highlight fdm-hover w3-btn-block" href="https://portal.bi.no/" target="_blank">Studentportalen</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://www.bi.no/bibliotek/" target="_blank">BI Bibliotek (ekstern)</a>
-	<a id="skranke" class="w3-btn w3-border-bottom fdm-border-blue fdm-highlight fdm-hover w3-btn-block" href="http://readinglist.bi.edu/" target="_blank">Talis pensumlister</a>
-	<a  class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://intra.bi.no/" target="_blank">BI Intra</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://biedu.sharepoint.com/teams/Team-0072/_layouts/15/start.aspx" target="_blank">Office365 Sharepoint BI Biblioteket</a>
+    <h2>BI</h2>
+    <a id="skranke" class="w3-btn w3-border-bottom fdm-border-blue fdm-highlight fdm-hover w3-btn-block" href="https://portal.bi.no/" target="_blank">Studentportalen</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://www.bi.no/bibliotek/" target="_blank">BI Bibliotek (ekstern)</a>
+    <a id="skranke" class="w3-btn w3-border-bottom fdm-border-blue fdm-highlight fdm-hover w3-btn-block" href="http://readinglist.bi.edu/" target="_blank">Talis pensumlister</a>
+    <a  class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://intra.bi.no/" target="_blank">BI Intra</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://biedu.sharepoint.com/teams/Team-0072/_layouts/15/start.aspx" target="_blank">Office365 Sharepoint BI Biblioteket</a>
 </div>
 
 </div>
@@ -73,34 +73,34 @@ L E N K E Ø N S K E R:
 
 <div class="w3-row-padding">
 <div class="w3-third">
-	<h2>Diverse</h2>
-	<a id="skranke" class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://www.nb.no/syn/" target="_blank">NB - behandle tilgang pliktavlevert</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://smartadmin.bibliotheca.dk:8080/statServer/" target="_blank">Bibliotheca SmartAdmin</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://ny.emweb.no/bi/nb" target="_blank">Emweb BI (Feide)</a>
-	<a id="skranke" class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover fdm-highlight w3-btn-block" href="https://link.mazemap.com/HFtahIFi" target="_blank">MazeMap</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://admin.mazemap.com/" target="_blank">MazeMap Admin</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://admin.mazemap.com/libadmin/#/" target="_blank">MazeMap Libadmin</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://libguides.bi.no/" target="_blank">LibGuides BI</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://bi.libapps.com/libapps/login.php?site_id=1868" target="_blank">LibApps Admin</a>
+    <h2>Diverse</h2>
+    <a id="skranke" class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover fdm-highlight w3-btn-block" href="https://www.nb.no/syn/" target="_blank">Nasjonalbiblioteket - behandle tilgang til pliktavlevert</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://smartadmin.bibliotheca.dk:8080/statServer/" target="_blank">Bibliotheca SmartAdmin</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://ny.emweb.no/bi/nb" target="_blank">Emweb BI (Feide)</a>
+    <a id="skranke" class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover fdm-highlight w3-btn-block" href="https://link.mazemap.com/HFtahIFi" target="_blank">MazeMap</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://admin.mazemap.com/" target="_blank">MazeMap Admin</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://admin.mazemap.com/libadmin/#/" target="_blank">MazeMap Libadmin</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://libguides.bi.no/" target="_blank">LibGuides BI</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://bi.libapps.com/libapps/login.php?site_id=1868" target="_blank">LibApps Admin</a>
 </div>
 
 
 <div class="w3-third">
-	<h2>Ex Libris / IGeLU / BIBSYS</h2>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://developers.exlibrisgroup.com/" target="_blank">Developer Network</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://knowledge.exlibrisgroup.com/" target="_blank">Knowledge Center</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://bim.bibsys.no/" target="_blank">BIM</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://forum.bibsys.no/index.php" target="_blank">BIBSYS Forum</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://www.bibsys.no/brukerstotte/brukerveiledning-2/" target="_blank">BIBSYS Veiledninger</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://cloud.bibsys.no/" target="_blank">BIBSYS Cloud</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://support.bibsys.no/otrs/customer.pl" target="_blank">BIBSYS Kundestøtte (erstatter support-mail)</a>
+    <h2>Ex Libris / IGeLU / BIBSYS</h2>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://developers.exlibrisgroup.com/" target="_blank">Developer Network</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://knowledge.exlibrisgroup.com/" target="_blank">Knowledge Center</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://bim.bibsys.no/" target="_blank">BIM</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://forum.bibsys.no/index.php" target="_blank">BIBSYS Forum</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://www.bibsys.no/brukerstotte/brukerveiledning-2/" target="_blank">BIBSYS Veiledninger</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://cloud.bibsys.no/" target="_blank">BIBSYS Cloud</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://support.bibsys.no/otrs/customer.pl" target="_blank">BIBSYS Kundestøtte (erstatter support-mail)</a>
 </div>
 
 <div class="w3-third">
-	<h2>Textmining</h2>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://github.com/Yoonsen/Modules" target="_blank">NBs Python-bibliotek dhlab.text</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://github.com/Yoonsen/Seminar_NB_september_2019" target="_blank">NBs seminar 2019 i bruk av dhlab.text</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://github.com/Yoonsen/Seminar_NB_september_2019" target="_blank">NBs N-gram<sup>BETA</sup></a>
+    <h2>Textmining</h2>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://github.com/Yoonsen/Modules" target="_blank">NBs Python-bibliotek dhlab.text</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://github.com/Yoonsen/Seminar_NB_september_2019" target="_blank">NBs seminar 2019 i bruk av dhlab.text</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://github.com/Yoonsen/Seminar_NB_september_2019" target="_blank">NBs N-gram<sup>BETA</sup></a>
 </div>
 </div>
 
@@ -110,27 +110,28 @@ L E N K E Ø N S K E R:
 
 <div class="w3-row-padding">
 <div class="w3-third">
-	<h2>Python</h2>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://libguides.bi.no/datalab/python" target="_blank">BI Libguide Python</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://colab.research.google.com/github/bisentralen" target="_blank">Colab på BI-sentralen (GitHub)</a>
+    <h2>Python</h2>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://libguides.bi.no/datalab/python" target="_blank">BI Libguide Python</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://colab.research.google.com/github/bisentralen" target="_blank">Colab på BI-sentralen (GitHub)</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://edstem.org/eu/dashboard" target="_blank">Ed</a>
 
 </div> 
 
 <div class="w3-third">
-	<h2>Julia</h2>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://julialang.org/" target="_blank">Julia Homepage</a>
+    <h2>Julia</h2>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://julialang.org/" target="_blank">Julia Homepage</a>
  <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://cheatsheet.juliadocs.org/" target="_blank">Julia Cheat Cheet</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://images.datacamp.com/image/upload/v1667400319/Marketing/Blog/Julia_Cheat_Sheet.pdf" target="_blank">another Julia Cheat Cheet</a> - PDF good for print.
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://images.datacamp.com/image/upload/v1667400319/Marketing/Blog/Julia_Cheat_Sheet.pdf" target="_blank">another Julia Cheat Cheet - PDF good for print</a>
 </div> 
 
 <div class="w3-third">
-	<h2>Web</h2>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://hslpicker.com/#fffb0a" target="_blank">HSL Color Picker</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://www.w3schools.com/colors/colors_picker.asp" target="_blank">HTML Color Picker</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://www.w3schools.com/html/default.asp" target="_blank">W3 HTML</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://www.w3schools.com/css/default.asp" target="_blank">W3 CSS</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://www.w3schools.com/w3css/default.asp" target="_blank">W3.CSS</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://design.bi.no/colour" target="_blank">BI Design Manual</a>
+    <h2>Web</h2>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://hslpicker.com/#fffb0a" target="_blank">HSL Color Picker</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://www.w3schools.com/colors/colors_picker.asp" target="_blank">HTML Color Picker</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://www.w3schools.com/html/default.asp" target="_blank">W3 HTML</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://www.w3schools.com/css/default.asp" target="_blank">W3 CSS</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://www.w3schools.com/w3css/default.asp" target="_blank">W3.CSS</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://design.bi.no/colour" target="_blank">BI Design Manual</a>
 </div>
 </div>
 
@@ -139,37 +140,37 @@ L E N K E Ø N S K E R:
 
 <div class="w3-row-padding">
 <div class="w3-third">
-	<h2>Verktøy</h2>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://hslpicker.com/#fffb0a" target="_blank">HSL Color Picker</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://regexr.com/" target="_blank">regexr.com</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://meyerweb.com/eric/tools/dencoder/" target="_blank">URL Decoder/Encoder</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://github.com/" target="_blank">GitHub</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://rogerdudler.github.io/git-guide/" target="_blank">git - the simple guide</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://bashrcgenerator.com/" target="_blank">&gt;_.bashrc PS1 generator</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://github.com/bisentralen" target="_blank">GitHub BI-sentralen</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://scriptotek.github.io/2016-03-17-BS/#setup" target="_blank">Scriptotek setup</a>
+    <h2>Verktøy</h2>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://hslpicker.com/#fffb0a" target="_blank">HSL Color Picker</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://regexr.com/" target="_blank">regexr.com</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://meyerweb.com/eric/tools/dencoder/" target="_blank">URL Decoder/Encoder</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://github.com/" target="_blank">GitHub</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://rogerdudler.github.io/git-guide/" target="_blank">git - the simple guide</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://bashrcgenerator.com/" target="_blank">&gt;_.bashrc PS1 generator</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://github.com/bisentralen" target="_blank">GitHub BI-sentralen</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://scriptotek.github.io/2016-03-17-BS/#setup" target="_blank">Scriptotek setup</a>
 </div> 
 
 <div class="w3-third">
-	<h2>Biblioteksløyd</h2>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://scriptotek.github.io/2016-03-17-BS/slides/" target="_blank">Biblioteksløyd mars 2016 - slides</a>
-	<a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://pad.software-carpentry.org/2017-02-02-librarycarpentry" target="_blank">Etherpad 02.02.2017</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://docs.google.com/document/d/1DR3MggVrQEbHtOLz_ytw8MbkZrGxFRESZoD1CCV9XfU/pub" target="_blank">Library Carpentry - Visualization Lesson: index (Virak 2017)</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://pad.software-carpentry.org/LVC" target="_blank">Etherpad 14.06.2017 - Visualization</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://d3js.org/" target="_blank">D3.js - A JavaScript library for manipulating documents based on data</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://jupyter.org/" target="_blank">jupyter - Jupyther Notebook...</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://www.continuum.io/anaconda-overview" target="_blank">ANACONDA - Leading Open Data Science Platform Powered by Python</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://www.lib.ncsu.edu/spaces" target="_blank">NC State University - Spaces</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://go.ncsu.edu/tableau-data" target="_blank">http://go.ncsu.edu/tableau-data</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://go.ncsu.edu/jupyter-stella" target="_blank">http://go.ncsu.edu/jupyter-stella</a>
-	<a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://go.ncsu.edu/mf-p5-done" target="_blank">http://go.ncsu.edu/mf-p5-done</a>
+    <h2>Biblioteksløyd</h2>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="https://scriptotek.github.io/2016-03-17-BS/slides/" target="_blank">Biblioteksløyd mars 2016 - slides</a>
+    <a id="programmering" class="w3-btn w3-border-bottom fdm-border-blue fdm-green fdm-hover w3-btn-block" href="http://pad.software-carpentry.org/2017-02-02-librarycarpentry" target="_blank">Etherpad 02.02.2017</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://docs.google.com/document/d/1DR3MggVrQEbHtOLz_ytw8MbkZrGxFRESZoD1CCV9XfU/pub" target="_blank">Library Carpentry - Visualization Lesson: index (Virak 2017)</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://pad.software-carpentry.org/LVC" target="_blank">Etherpad 14.06.2017 - Visualization</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://d3js.org/" target="_blank">D3.js - A JavaScript library for manipulating documents based on data</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://jupyter.org/" target="_blank">jupyter - Jupyther Notebook...</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://www.continuum.io/anaconda-overview" target="_blank">ANACONDA - Leading Open Data Science Platform Powered by Python</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://www.lib.ncsu.edu/spaces" target="_blank">NC State University - Spaces</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://go.ncsu.edu/tableau-data" target="_blank">http://go.ncsu.edu/tableau-data</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://go.ncsu.edu/jupyter-stella" target="_blank">http://go.ncsu.edu/jupyter-stella</a>
+    <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://go.ncsu.edu/mf-p5-done" target="_blank">http://go.ncsu.edu/mf-p5-done</a>
 </div> 
 
 <div class="w3-third">
-	<h2>Dokumentproduksjon</h2>
-	LaTeX: <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://ctan.org/" target="_blank">CTAN</a> - The Comprehensive TEX Archive Network
-	LaTeX: <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://www.andy-roberts.net/writing/latex" target="_blank">Getting to Grips with LaTeX</a> - Tutorials by Andrew Roberts
-	LaTeX: <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://latextools.readthedocs.io/en/latest/" target="_blank">LaTeXTools: A LaTeX Plugin for Sublime Text 2 and 3</a>
+    <h2>Dokumentproduksjon</h2>
+    LaTeX: <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="https://ctan.org/" target="_blank">CTAN</a> - The Comprehensive TEX Archive Network
+    LaTeX: <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://www.andy-roberts.net/writing/latex" target="_blank">Getting to Grips with LaTeX</a> - Tutorials by Andrew Roberts
+    LaTeX: <a class="w3-btn w3-border-bottom fdm-border-blue fdm-box fdm-hover w3-btn-block" href="http://latextools.readthedocs.io/en/latest/" target="_blank">LaTeXTools: A LaTeX Plugin for Sublime Text 2 and 3</a>
 </div>
 </div>
 
