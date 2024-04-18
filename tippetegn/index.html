@@ -28,42 +28,15 @@
       
 
       function clearall() {
-        document.getElementById("1h").innerHTML = "&nbsp;";
-        document.getElementById("1u").innerHTML = "&nbsp;";
-        document.getElementById("1b").innerHTML = "&nbsp;";
-        document.getElementById("2h").innerHTML = "&nbsp;";
-        document.getElementById("2u").innerHTML = "&nbsp;";
-        document.getElementById("2b").innerHTML = "&nbsp;";
-        document.getElementById("3h").innerHTML = "&nbsp;";
-        document.getElementById("3u").innerHTML = "&nbsp;";
-        document.getElementById("3b").innerHTML = "&nbsp;";
-        document.getElementById("4h").innerHTML = "&nbsp;";
-        document.getElementById("4u").innerHTML = "&nbsp;";
-        document.getElementById("4b").innerHTML = "&nbsp;";
-        document.getElementById("5h").innerHTML = "&nbsp;";
-        document.getElementById("5u").innerHTML = "&nbsp;";
-        document.getElementById("5b").innerHTML = "&nbsp;";
-        document.getElementById("6h").innerHTML = "&nbsp;";
-        document.getElementById("6u").innerHTML = "&nbsp;";
-        document.getElementById("6b").innerHTML = "&nbsp;";
-        document.getElementById("7h").innerHTML = "&nbsp;";
-        document.getElementById("7u").innerHTML = "&nbsp;";
-        document.getElementById("7b").innerHTML = "&nbsp;";
-        document.getElementById("8h").innerHTML = "&nbsp;";
-        document.getElementById("8u").innerHTML = "&nbsp;";
-        document.getElementById("8b").innerHTML = "&nbsp;";
-        document.getElementById("9h").innerHTML = "&nbsp;";
-        document.getElementById("9u").innerHTML = "&nbsp;";
-        document.getElementById("9b").innerHTML = "&nbsp;";
-        document.getElementById("10h").innerHTML = "&nbsp;";
-        document.getElementById("10u").innerHTML = "&nbsp;";
-        document.getElementById("10b").innerHTML = "&nbsp;";
-        document.getElementById("11h").innerHTML = "&nbsp;";
-        document.getElementById("11u").innerHTML = "&nbsp;";
-        document.getElementById("11b").innerHTML = "&nbsp;";
-        document.getElementById("12h").innerHTML = "&nbsp;";
-        document.getElementById("12u").innerHTML = "&nbsp;";
-        document.getElementById("12b").innerHTML = "&nbsp;";
+        for (let i=1; i<13; i++) {
+          is = i.toString();
+          let h_id = is.concat("h");
+          let u_id = is.concat("u");
+          let b_id = is.concat("b");
+          document.getElementById(h_id).innerHTML = "&nbsp;";
+          document.getElementById(u_id).innerHTML = "&nbsp;";
+          document.getElementById(b_id).innerHTML = "&nbsp;";
+        }
       }
 
       
@@ -102,7 +75,7 @@
 
     <div class="w3-row">
 
-    <div class="w3-half">
+    <div class="w3-twothird">
     <div class="w3-panel w3-monospace w3-padding w3-jumbo">
     <div class="w3-containter">
     &nbsp;1.  <div id="1h" class="xbox w3-tag w3-round w3-white w3-center">&nbsp;</div>
@@ -176,7 +149,7 @@
   </div>
 </div>
 
-  <div class="w3-half">
+  <div class="w3-third">
     <div class="w3-panel">
       <button class="w3-button w3-yellow w3-round-large w3-padding w3-jumbo" onclick="tippall_tilfeldig(0.4, 0.7)">STRIKK<br/>TILFELDIG</button>
       <br/><br/>
