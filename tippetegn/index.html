@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="../css/f-darkmatter.css">
   <head>
-    <title>Tilfeldig tippetegngenerator</title>
+    <title>Tippetegngenerator</title>
     <script>
 
       function tipptilfeldig(kampnr, limHU, limUB) {
@@ -18,11 +18,11 @@
 
         var n = Math.random();     // returns a random number between 0 (inclusive),  and 1 (exclusive):
         if (n<limHU) {
-          document.getElementById(h_id).innerHTML = "X";   // &#10006;
+          document.getElementById(h_id).innerHTML = "&#10006;";   // &#10006;
         } else if (n<limUB) {
-          document.getElementById(u_id).innerHTML = "X";
+          document.getElementById(u_id).innerHTML = "&#10006;";
         } else {
-          document.getElementById(b_id).innerHTML = "X";
+          document.getElementById(b_id).innerHTML = "&#10006;";
         }
       }
       
@@ -35,36 +35,42 @@
       }
 
     </script>
+
+    <style>
+      .xbox
+      {
+         width:100px;
+         height:100px;
+         display: inline-block;
+      }
+
+    </style>
   </head>
 
 
   <body class="fdm-cyan fdm-darkblue w3-large">
     
-    <h1>Tilfeldig Tappegenerator</h1>
-    <p>
-      Velg evnt. prosent sjanse for H, U, B.<br/>
-      Trykk STRIKK for nye kryss.
-    </p>
+    <h1>Tappegenerator</h1>
 
-    <button class="w3-button" onclick="tippall(0.4, 0.7)">STRIKK</button>
+    <button class="w3-button w3-yellow" onclick="tippall(0.4, 0.7)">STRIKK TILFELDIG</button>
 
     <div class="w3-containter">
 
     <div class="w3-panel w3-monospace w3-jumbo">
     <div class="w3-containter w3-padding-small">
-    &nbsp;1.  <div id="1h" class="w3-tag w3-round w3-white w3-center">&nbsp;</div>
-        <div id="1u" class="w3-tag w3-round w3-white w3-center">&nbsp;</div>
-        <div id="1b" class="w3-tag w3-round w3-white w3-center">&nbsp;</div>
+    &nbsp;1.  <div id="1h" class="xbox w3-tag w3-round w3-white w3-center">&nbsp;</div>
+        <div id="1u" class="xbox w3-tag w3-round w3-white w3-center">&nbsp;</div>
+        <div id="1b" class="xbox w3-tag w3-round w3-white w3-center">&nbsp;</div>
       </div>
       <div class="w3-containter w3-padding-small">
-    &nbsp;2.  <div id="2h" class="w3-tag w3-round w3-white w3-center">&nbsp;</div>
-        <div id="2u" class="w3-tag w3-round w3-white w3-center">&nbsp;</div>
-        <div id="2b" class="w3-tag w3-round w3-white w3-center">&nbsp;</div>
+    &nbsp;2.  <div id="2h" class="xbox w3-tag w3-round w3-white w3-center">&nbsp;</div>
+        <div id="2u" class="xbox w3-tag w3-round w3-white w3-center">&nbsp;</div>
+        <div id="2b" class="xbox w3-tag w3-round w3-white w3-center">&nbsp;</div>
       </div>
       <div class="w3-containter w3-padding-small">
-    &nbsp;3.  <div id="3h" class="w3-tag w3-round w3-white w3-center">&nbsp;</div>
-        <div id="3u" class="w3-tag w3-round w3-white w3-center">&nbsp;</div>
-        <div id="3b" class="w3-tag w3-round w3-white w3-center">&nbsp;</div>
+    &nbsp;3.  <div id="3h" class="xbox w3-tag w3-round w3-white w3-center">&nbsp;</div>
+        <div id="3u" class="xbox w3-tag w3-round w3-white w3-center">&nbsp;</div>
+        <div id="3b" class="xbox w3-tag w3-round w3-white w3-center">&nbsp;</div>
       </div>
     </div>
 
@@ -122,7 +128,7 @@
     </div>
   </div>
 
-</div>
+  </div>
 
   </body>
 </html>
