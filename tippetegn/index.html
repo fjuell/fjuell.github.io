@@ -27,12 +27,105 @@
       }
       
 
-      function tippall(limHU, limUB) {
+      function clearall() {
+        document.getElementById("1h").innerHTML = "&nbsp;";
+        document.getElementById("1u").innerHTML = "&nbsp;";
+        document.getElementById("1b").innerHTML = "&nbsp;";
+        document.getElementById("2h").innerHTML = "&nbsp;";
+        document.getElementById("2u").innerHTML = "&nbsp;";
+        document.getElementById("2b").innerHTML = "&nbsp;";
+        document.getElementById("3h").innerHTML = "&nbsp;";
+        document.getElementById("3u").innerHTML = "&nbsp;";
+        document.getElementById("3b").innerHTML = "&nbsp;";
+        document.getElementById("4h").innerHTML = "&nbsp;";
+        document.getElementById("4u").innerHTML = "&nbsp;";
+        document.getElementById("4b").innerHTML = "&nbsp;";
+        document.getElementById("5h").innerHTML = "&nbsp;";
+        document.getElementById("5u").innerHTML = "&nbsp;";
+        document.getElementById("5b").innerHTML = "&nbsp;";
+        document.getElementById("6h").innerHTML = "&nbsp;";
+        document.getElementById("6u").innerHTML = "&nbsp;";
+        document.getElementById("6b").innerHTML = "&nbsp;";
+        document.getElementById("7h").innerHTML = "&nbsp;";
+        document.getElementById("7u").innerHTML = "&nbsp;";
+        document.getElementById("7b").innerHTML = "&nbsp;";
+        document.getElementById("8h").innerHTML = "&nbsp;";
+        document.getElementById("8u").innerHTML = "&nbsp;";
+        document.getElementById("8b").innerHTML = "&nbsp;";
+        document.getElementById("9h").innerHTML = "&nbsp;";
+        document.getElementById("9u").innerHTML = "&nbsp;";
+        document.getElementById("9b").innerHTML = "&nbsp;";
+        document.getElementById("10h").innerHTML = "&nbsp;";
+        document.getElementById("10u").innerHTML = "&nbsp;";
+        document.getElementById("10b").innerHTML = "&nbsp;";
+        document.getElementById("11h").innerHTML = "&nbsp;";
+        document.getElementById("11u").innerHTML = "&nbsp;";
+        document.getElementById("11b").innerHTML = "&nbsp;";
+        document.getElementById("12h").innerHTML = "&nbsp;";
+        document.getElementById("12u").innerHTML = "&nbsp;";
+        document.getElementById("12b").innerHTML = "&nbsp;";
+      }
+
+      function strikkmonster1() {
+        document.getElementById("1h").innerHTML = "X";
+        document.getElementById("1u").innerHTML = "&nbsp;";
+        document.getElementById("1b").innerHTML = "&nbsp;";
+
+        document.getElementById("2h").innerHTML = "&nbsp;";
+        document.getElementById("2u").innerHTML = "X";
+        document.getElementById("2b").innerHTML = "&nbsp;";
+
+        document.getElementById("3h").innerHTML = "&nbsp;";
+        document.getElementById("3u").innerHTML = "&nbsp;";
+        document.getElementById("3b").innerHTML = "X";
+
+        document.getElementById("4h").innerHTML = "&nbsp;";
+        document.getElementById("4u").innerHTML = "&nbsp;";
+        document.getElementById("4b").innerHTML = "X";
+
+        document.getElementById("5h").innerHTML = "&nbsp;";
+        document.getElementById("5u").innerHTML = "X";
+        document.getElementById("5b").innerHTML = "&nbsp;";
+
+        document.getElementById("6h").innerHTML = "X";
+        document.getElementById("6u").innerHTML = "&nbsp;";
+        document.getElementById("6b").innerHTML = "&nbsp;";
+
+        document.getElementById("7h").innerHTML = "X";
+        document.getElementById("7u").innerHTML = "&nbsp;";
+        document.getElementById("7b").innerHTML = "&nbsp;";
+
+        document.getElementById("8h").innerHTML = "&nbsp;";
+        document.getElementById("8u").innerHTML = "X";
+        document.getElementById("8b").innerHTML = "&nbsp;";
+
+        document.getElementById("9h").innerHTML = "&nbsp;";
+        document.getElementById("9u").innerHTML = "&nbsp;";
+        document.getElementById("9b").innerHTML = "X";
+
+        document.getElementById("10h").innerHTML = "&nbsp;";
+        document.getElementById("10u").innerHTML = "&nbsp;";
+        document.getElementById("10b").innerHTML = "X";
+
+        document.getElementById("11h").innerHTML = "&nbsp;";
+        document.getElementById("11u").innerHTML = "X";
+        document.getElementById("11b").innerHTML = "&nbsp;";
+
+        document.getElementById("12h").innerHTML = "X";
+        document.getElementById("12u").innerHTML = "&nbsp;";
+        document.getElementById("12b").innerHTML = "&nbsp;";
+      }
+
+
+      function tippall_tilfeldig(limHU, limUB) {
         for (let i=1; i<13; i++) {
           is = i.toString();
           tipptilfeldig(is, limHU, limUB);
         }
       }
+
+
+
 
     </script>
 
@@ -52,9 +145,12 @@
 
   <body class="fdm-cyan fdm-darkblue w3-xxlarge">
     
-    <header class="w3container fdm-cyan w3-jumbo">Tippetegngenerator</header>
+    <header class="w3container w3-pink w3-center w3-jumbo">Tippetegngenerator</header>
 
-    <button class="w3-button w3-yellow" onclick="tippall(0.4, 0.7)">STRIKK TILFELDIG</button>
+    Strikk:
+    <button class="w3-button w3-yellow" onclick="tippall_tilfeldig(0.4, 0.7)">TILFELDIG</button>
+    <button class="w3-button w3-yellow" onclick="strikkmonster1()">MØNSTER</button>
+    <button class="w3-button w3-yellow" onclick="clearall()">SLETT</button>
 
     <div class="w3-containter">
 
