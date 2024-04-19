@@ -9,6 +9,13 @@
 
 
       function tipptilfeldig(limHU, limUB) {
+        let vekt_h = limHU*100;
+        let vekt_u = limUB*100 - vekt_h;
+        let vekt_b = 100 - 100*limUB;
+        document.getElementById("wh").innerHTML = "".concat(vekt_h,"%");
+        document.getElementById("wu").innerHTML = "".concat(vekt_u,"%");
+        document.getElementById("wb").innerHTML = "".concat(vekt_b,"%");
+
         for (let i=1; i<13; i++) {
           is = i.toString();
           let h_id = is.concat("h");
@@ -58,7 +65,11 @@
        
         // Pick random kamper to be halvgardert
         let halvgarderte;
-        if (rekker==16) {
+        if (rekker==1) {
+          halvgarderte = [];
+        } else if (rekker==2) {
+          halvgarderte = getRandomElements(kamper, 1);
+        } else if (rekker==16) {
           halvgarderte = getRandomElements(kamper, 4);
         } else if (rekker==32) {
           halvgarderte = getRandomElements(kamper, 5);
@@ -66,17 +77,15 @@
           halvgarderte = getRandomElements(kamper, 5);
         } else if (rekker==64) {
           halvgarderte = getRandomElements(kamper, 6);
-        } else {
-          halvgarderte = [];
         }
 
         document.getElementById("TESTAREA_2").innerHTML = "halvgarderte:".concat(halvgarderte);
 
         if (rekker==48) {
           let last_element = halvgarderte[halvgarderte.length - 1]
-          document.getElementById(last_element.concat("h")).innerHTML = "Y";
-          document.getElementById(last_element.concat("u")).innerHTML = "Y";
-          document.getElementById(last_element.concat("b")).innerHTML = "Y";
+          document.getElementById(last_element.concat("h")).innerHTML = "X";
+          document.getElementById(last_element.concat("u")).innerHTML = "X";
+          document.getElementById(last_element.concat("b")).innerHTML = "X";
           halvgarderte.pop();
         }
 
@@ -96,10 +105,8 @@
         }
         document.getElementById("TESTAREA_4").innerHTML = "halvgard_ids:".concat(halvgard_ids);
         // Sett inn halvgarderingene
-
         for (var i = 0, length = halvgard_ids.length; i < length; i++) {
-          document.getElementById(halvgard_ids[i]).innerHTML = "Y";
-          
+          document.getElementById(halvgard_ids[i]).innerHTML = "X"; 
         }
       } // end function
 
@@ -118,7 +125,6 @@
           document.getElementById(b_id).innerHTML = "&nbsp;";
         }
       }
-
 
     </script>
 
@@ -252,20 +258,30 @@
       <br/>
 
       <div class="w3-padding w3-left-align">
-        <button class="w3-button w3-yellow w3-round-large w3-padding-large w3-xxlarge" onclick="tipptilfeldig(0.4, 0.7); garder();"><div class="w3-left-align">AKTIVÉR<br/>GENERATOR</div></button>
-         <br/><br/>
+        <p><button class="w3-button w3-yellow w3-round-large w3-padding-large w3-xxlarge" onclick="tipptilfeldig(0.4, 0.7); garder();"><div class="w3-left-align">IVERKSETT<br/>GENERATOR</div></button>
+        </p>
+        <p>
         <div class="radio-button-container w3-monospace">
+          <div class="w3-xlarge">Antall rekker:</div>
           <input class="w3-radio" type="radio" name="antRekk" id="r1" value=1 checked>
-          <label for="r1">1</label>
+          <label for="r1">&nbsp;1</label>
+          <input class="w3-radio" type="radio" name="antRekk" id="r2" value=2>
+          <label for="r2">&nbsp;2</label>
           <input class="w3-radio" type="radio" name="antRekk" id="r16" value=16>
-          <label for="r16">16</label>
+          <label for="r16">16</label><br/>
           <input class="w3-radio" type="radio" name="antRekk" id="r32" value=32>
-          <label for="r32">32</label><br/>
+          <label for="r32">32</label>
           <input class="w3-radio" type="radio" name="antRekk" id="r48" value=48>
           <label for="r48">48</label>
           <input class="w3-radio" type="radio" name="antRekk" id="r64" value=64>
           <label for="r64">64</label>
         </div>
+      </p>
+      <p>
+        <div class="w3-xlarge">Tilfeldighetsvekting:</div>
+        <div id="wh" class="w3-badge w3-green w3-xlarge">&nbsp;H&nbsp;</div>
+        <div id="wu" class="w3-badge w3-yellow w3-xlarge">&nbsp;U&nbsp;</div>
+        <div id="wb" class="w3-badge w3-red w3-xlarge">&nbsp;B&nbsp;</div>
          <br/><br/>
         <button class="w3-button w3-yellow w3-round-large w3-padding-large" onclick="clearall()">SLETT</button>
       </div>  
