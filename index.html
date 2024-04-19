@@ -4,7 +4,9 @@
 <link rel="stylesheet" href="../css/f-darkmatter.css">
   <head>
     <title>Tippetegngenerator</title>
+
     <script>
+
 
       function tipptilfeldig(limHU, limUB) {
         for (let i=1; i<13; i++) {
@@ -41,6 +43,7 @@
 
       function garder() {
         let rekker = 1
+        // Getting the checked radio button
         var rekkRadios = document.getElementsByName('antRekk');
         for (var i = 0, length = rekkRadios.length; i < length; i++) {
           if (rekkRadios[i].checked) {
@@ -50,35 +53,52 @@
             break;
           }
         }
-        document.getElementById("TEST").innerHTML = rekker; // Output to test div
+        document.getElementById("TESTAREA_1").innerHTML = "rekker:".concat(rekker); // Output to test div
         let kamper = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
-        let gardert = Math.floor(Math.random()*kamper.length);
-        document.getElementById("TESTgard").innerHTML = kamper[gardert]; // Output to test div
-        
+       
+        // Pick random kamper to be halvgardert
         let halvgarderte;
         if (rekker==16) {
           halvgarderte = getRandomElements(kamper, 4);
         } else if (rekker==32) {
           halvgarderte = getRandomElements(kamper, 5);
+        } else if (rekker==48) {
+          halvgarderte = getRandomElements(kamper, 5);
         } else if (rekker==64) {
           halvgarderte = getRandomElements(kamper, 6);
+        } else {
+          halvgarderte = [];
         }
-        
-        document.getElementById("TESTarray").innerHTML = halvgarderte;
 
-        for (let kampnr in halvgarderte) {
-          let h_id = halvgarderte[kampnr].concat("h");
-          let u_id = halvgarderte[kampnr].concat("u");
-          let b_id = halvgarderte[kampnr].concat("b");
-          let ids = [h_id, u_id, b_id];
-          let xcandidates = [];
-          for (let id in ids) {
-            if (document.getElementById(id).innerHTML != "X") {
-              document.getElementById(id).innerHTML = "Y";
-              xcandidates.push(id);
-            }
-          }
-          document.getElementById("2h").innerHTML = "Y";
+        document.getElementById("TESTAREA_2").innerHTML = "halvgarderte:".concat(halvgarderte);
+
+        if (rekker==48) {
+          let last_element = halvgarderte[halvgarderte.length - 1]
+          document.getElementById(last_element.concat("h")).innerHTML = "Y";
+          document.getElementById(last_element.concat("u")).innerHTML = "Y";
+          document.getElementById(last_element.concat("b")).innerHTML = "Y";
+          halvgarderte.pop();
+        }
+
+        let halvgard_ids = []; // id-er til alle halvgarderinger som skal settes
+        for (var i = 0, length = halvgarderte.length; i < length; i++) {
+          let h_id = halvgarderte[i].concat("h");
+          let u_id = halvgarderte[i].concat("u");
+          let b_id = halvgarderte[i].concat("b");
+          let ids_avail = [];
+          if (document.getElementById(h_id).innerHTML != "X") {ids_avail.push(h_id)};
+          if (document.getElementById(u_id).innerHTML != "X") {ids_avail.push(u_id)};
+          if (document.getElementById(b_id).innerHTML != "X") {ids_avail.push(b_id)};
+          document.getElementById("TESTAREA_3").innerHTML = "ids_avail:".concat(ids_avail);
+          const n = Math.random();
+          if (n<0.5) {halvgard_ids.push(ids_avail[0])}
+            else {halvgard_ids.push(ids_avail[1])}
+        }
+        document.getElementById("TESTAREA_4").innerHTML = "halvgard_ids:".concat(halvgard_ids);
+        // Sett inn halvgarderingene
+
+        for (var i = 0, length = halvgard_ids.length; i < length; i++) {
+          document.getElementById(halvgard_ids[i]).innerHTML = "Y";
           
         }
       } // end function
@@ -228,34 +248,45 @@
   <div class="w3-third">
     <div class="w3-panel">
 
-      <div id="TEST" class="w3-badge w3-red"></div>
-      <div id="TESTgard" class="w3-badge w3-green"></div>
-      <div id="TESTarray" class="w3-badge w3-white"></div>
+
       <br/>
 
       <div class="w3-padding w3-left-align">
-      <button class="w3-button w3-yellow w3-round-large w3-padding-large w3-xxlarge" onclick="tipptilfeldig(0.4, 0.7)"><div class="w3-left-align">AKTIVÉR<br/>GENERATOR</div></button>
+        <button class="w3-button w3-yellow w3-round-large w3-padding-large w3-xxlarge" onclick="tipptilfeldig(0.4, 0.7); garder();"><div class="w3-left-align">AKTIVÉR<br/>GENERATOR</div></button>
+         <br/><br/>
+        <div class="radio-button-container w3-monospace">
+          <input class="w3-radio" type="radio" name="antRekk" id="r1" value=1 checked>
+          <label for="r1">1</label>
+          <input class="w3-radio" type="radio" name="antRekk" id="r16" value=16>
+          <label for="r16">16</label>
+          <input class="w3-radio" type="radio" name="antRekk" id="r32" value=32>
+          <label for="r32">32</label><br/>
+          <input class="w3-radio" type="radio" name="antRekk" id="r48" value=48>
+          <label for="r48">48</label>
+          <input class="w3-radio" type="radio" name="antRekk" id="r64" value=64>
+          <label for="r64">64</label>
+        </div>
+         <br/><br/>
+        <button class="w3-button w3-yellow w3-round-large w3-padding-large" onclick="clearall()">SLETT</button>
       </div>  
-      <br/><br/>
-
-      <div class="w3-border w3-padding w3-left-align">
-      <button class="w3-button w3-yellow w3-round-large w3-padding-large w3-xxlarge" onclick="garder()"><div class="w3-left-align">GARDRÉR</div></button><br/>
       
-      <div class="radio-button-container w3-monospace w3-padding-small">
-        <input class="w3-radio" type="radio" name="antRekk" id="r16" value=16>
-        <label for="r16">16</label>
-        <input class="w3-radio" type="radio" name="antRekk" id="r32" value=32>
-        <label for="r32">32</label><br/>
-        <input class="w3-radio" type="radio" name="antRekk" id="r48" value=48>
-        <label for="r48">48</label>
-        <input class="w3-radio" type="radio" name="antRekk" id="r64" value=64 checked>
-        <label for="r64">64</label>
-      </div>
+
+      <div class="w3-padding">
+        <div id="TESTAREA_1" class="w3-card w3-large w3-blue"></div>
+        <div id="TESTAREA_2" class="w3-card w3-large w3-green"></div>
+        <div id="TESTAREA_3" class="w3-card w3-large w3-blue"></div>
+        <div id="TESTAREA_4" class="w3-card w3-large w3-green"></div>
+        <div id="TESTAREA_5" class="w3-card w3-large w3-blue"></div>
+        <div id="TESTAREA_6" class="w3-card w3-large w3-green"></div>
+        <div id="TESTAREA_7" class="w3-card w3-large w3-blue"></div>
+        <div id="TESTAREA_8" class="w3-card w3-large w3-green"></div>
+        <div id="TESTAREA_9" class="w3-card w3-large w3-blue"></div>
+        <div id="TESTAREA_10" class="w3-card w3-large w3-green"></div>
       </div>
 
-      <br/><br/>
-      <button class="w3-button w3-yellow w3-round-large w3-padding-large" onclick="clearall()">SLETT</button>
-    </div>
+
+      </div>
+    </div>  
   </div>
 
   </div>
