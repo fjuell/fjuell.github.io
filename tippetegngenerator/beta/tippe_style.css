@@ -1,0 +1,39 @@
+
+
+.xbox
+{
+  width:1.3em;
+  height:1.3em;
+  line-height: 1.3em;
+  text-align: center;
+  margin:auto;
+}
+
+.radio-button-container input[type="radio"] {
+  display: none;
+}
+
+.radio-button-container label {
+  color: #0b1222;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  padding: 16px 24px;
+  border-radius: 6px;
+  /*border: 1px solid #555;*/
+  cursor: pointer;
+  background-color: #d0dfe6;
+}
+
+.radio-button-container input[type="radio"]:checked + label {
+  background-color: #0f0;
+  border-color: #0f0;
+}
+
+.radio-button-container input[type="radio"]:focus + label {
+  /*border: 2px dashed #444;*/
+}
+
+.radio-button-container label:hover {
+  background-color: #fff;
+}
