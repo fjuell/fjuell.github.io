@@ -10,11 +10,6 @@ function toggleX(anID) {
     x.innerHTML = "&nbsp;";
     // Check if any siblings have X, and if not, remove data-lock
     const collection = kampx.children;
-    /*let text = "";
-    for (let i = 0; i < collection.length; i++) {
-      text += collection[i].tagName + "<br>";
-    }
-    document.getElementById("TESTAREA_7").innerHTML = text;*/
     if (collection[0].innerHTML === "&nbsp;" && collection[1].innerHTML === "&nbsp;" && collection[2].innerHTML === "&nbsp;") {
       kampx.setAttribute("data-lock", "no");
     }
@@ -160,11 +155,17 @@ function clearall() {
 
 
 function checklocks() {
-  locks = [];
+  //locks = [];
   for (let i=1; i<13; i++) {
     is = i.toString();
     let kamp_id = "kamp".concat(is);
-    locks.push(is.concat("-",document.getElementById(kamp_id).getAttribute("data-lock"),"<br/>"));
+    let lock_id = "lock".concat(is);
+    if (document.getElementById(kamp_id).getAttribute("data-lock") === "yes") {
+      document.getElementById(lock_id).innerHTML = "lock";
+    } else {
+      document.getElementById(lock_id).innerHTML = "";
+    }
+    //locks.push(is.concat("-",document.getElementById(kamp_id).getAttribute("data-lock"),"<br/>"));
   }
-  document.getElementById("TESTAREA_6").innerHTML = "Locks:<br/>".concat(locks);
+  //document.getElementById("TESTAREA_6").innerHTML = "Locks:<br/>".concat(locks);
 }
