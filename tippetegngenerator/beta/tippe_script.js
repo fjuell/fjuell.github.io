@@ -68,6 +68,26 @@ function getRandomElements(array, n) {
 
 
 
+function getLockedGarderings() {
+  let antHalvgard = 0;
+  let antHelgard = 0;
+  for (let i=1; i<13; i++) {
+    is = i.toString();
+    let h_id = is.concat("h");
+    let u_id = is.concat("u");
+    let b_id = is.concat("b");
+    let kamp_id = "kamp".concat(is);
+    let numberOfXes = 0;
+    if (document.getElementById(kamp_id).getAttribute("data-lock") === "yes") {
+      //
+    } else {
+      //
+    }
+  }
+}
+
+
+
 function garder() {
   let rekker = 1
   // Getting the checked radio button
@@ -83,10 +103,6 @@ function garder() {
   document.getElementById("TESTAREA_1").innerHTML = "rekker:".concat(rekker); // Output to test div
   let kamper = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
  
-  // Check locked kamper, and which is halv/helgardert allerede. 
-  // Dette må avgjøre hvor mange garderinger som skal gjøres under.
-  // CODE HERE
-  
   // Pick random kamper to be halvgardert
   let halvgarderte;
   if (rekker==1) {
@@ -102,8 +118,11 @@ function garder() {
   } else if (rekker==64) {
     halvgarderte = getRandomElements(kamper, 6);
   }
-
   document.getElementById("TESTAREA_2").innerHTML = "halvgarderte:".concat(halvgarderte);
+
+  // Check locked kamper, and which is halv/helgardert allerede. 
+  // Dette må avgjøre hvor mange garderinger som skal gjøres under.
+  
 
   if (rekker==48) {
     // Bruk siste halvgardering, og gjør den til helgardering. 
