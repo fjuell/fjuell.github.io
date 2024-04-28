@@ -25,6 +25,7 @@ function toggleX(anID) {
 
 
 function tipptilfeldig(limHU, limUB) {
+        // Print vekter
         let vekt_h = limHU*100;
         let vekt_u = limUB*100 - vekt_h;
         let vekt_b = 100 - 100*limUB;
@@ -37,13 +38,16 @@ function tipptilfeldig(limHU, limUB) {
           let h_id = is.concat("h");
           let u_id = is.concat("u");
           let b_id = is.concat("b");
-          // Slett alle kryss
-          /*document.getElementById(h_id).innerHTML = "&nbsp;";
-          document.getElementById(u_id).innerHTML = "&nbsp;";
-          document.getElementById(b_id).innerHTML = "&nbsp;";*/
+          let kamp_id = "kamp".concat(is);
 
-          if (document.getElementById(h_id).innerHTML == "X" || document.getElementById(u_id).innerHTML == "X" || document.getElementById(b_id).innerHTML == "X") {
+          if (document.getElementById(kamp_id).getAttribute("data-lock") == "yes") {
+            // Hopp over hvis locked
             continue;
+          } else {
+            // Slett alle kryss
+            document.getElementById(h_id).innerHTML = "&nbsp;";
+            document.getElementById(u_id).innerHTML = "&nbsp;";
+            document.getElementById(b_id).innerHTML = "&nbsp;";
           }
 
           const n = Math.random();     // returns a random number between 0 (inclusive),  and 1 (exclusive):
@@ -107,10 +111,12 @@ function garder() {
   document.getElementById("TESTAREA_2").innerHTML = "halvgarderte:".concat(halvgarderte);
 
   if (rekker==48) {
+    // Bruk siste halvgardering, og gjør den til helgardering. 
     let last_element = halvgarderte[halvgarderte.length - 1]
     document.getElementById(last_element.concat("h")).innerHTML = "X";
     document.getElementById(last_element.concat("u")).innerHTML = "X";
     document.getElementById(last_element.concat("b")).innerHTML = "X";
+    // Og fjern den fra listen
     halvgarderte.pop();
   }
 
