@@ -79,11 +79,25 @@ function getLockedGarderings() {
     let kamp_id = "kamp".concat(is);
     let numberOfXes = 0;
     if (document.getElementById(kamp_id).getAttribute("data-lock") === "yes") {
-      //
-    } else {
-      //
+      if (document.getElementById(h_id).innerHTML === "X") {
+        numberOfXes = numberOfXes+1;
+      }
+      if (document.getElementById(u_id).innerHTML === "X") {
+        numberOfXes = numberOfXes+1;
+      }
+      if (document.getElementById(b_id).innerHTML === "X") {
+        numberOfXes = numberOfXes+1;
+      }
     }
-  }
+    if (numberOfXes == 2) {
+      antHalvgard = antHalvgard+1;
+    }
+    if (numberOfXes == 3) {
+      antHelgard = antHelgard+1;
+    }
+  } // end for
+  document.getElementById("TESTAREA_6").innerHTML = "lockHalv,lockHel:".concat([antHalvgard, antHelgard]);
+  return [antHalvgard, antHelgard];
 }
 
 
@@ -122,6 +136,21 @@ function garder() {
 
   // Check locked kamper, and which is halv/helgardert allerede. 
   // Dette må avgjøre hvor mange garderinger som skal gjøres under.
+  // Kamplisten må også redefineres: Kan bare trekke tilfeldige garderinger fra kamper som 
+  // ikke er låst.
+  usedGarderings = getLockedGarderings();
+  // Gi feilmelding i header hvis for mange halvgarderinger
+  if (usedGarderings[0] > halvgarderte.length) {
+    const header = document.getElementById("tippeHeader");
+    header.innerHTML = "<small>Brukerfeil: Mange garderinger</small>";
+    header.classList.remove('w3-pink');
+    header.classList.remove('w3-center');
+    header.classList.add('w3-gray');
+    return "Error: Brukerfeil"; 
+  }
+
+  // Subtract locked garderinger
+  //halvgarderte = halvgarderte - usedGarderings[0];
   
 
   if (rekker==48) {
@@ -169,6 +198,11 @@ function clearall() {
     let kamp_id = "kamp".concat(is);
     document.getElementById(kamp_id).setAttribute("data-lock", "no");
   }
+  const header = document.getElementById("tippeHeader");
+  header.innerHTML = "Tippetegngenerator <small>v1.1 &beta;</small>";
+  header.classList.remove('w3-gray');
+  header.classList.add('w3-pink');
+  header.classList.add('w3-center');
 }
 
 
