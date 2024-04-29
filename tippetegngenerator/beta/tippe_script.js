@@ -105,13 +105,34 @@ function getLockedGarderings() {
 
 
 
+
+
 function printError() {
   const header = document.getElementById("tippeHeader");
-  header.innerHTML = "<small>Brukerfeil: Overgardering</small>";
+  header.innerHTML = "<div class='jersey-20'>user error: check your X-es</div>";
   header.classList.remove('w3-pink');
   header.classList.remove('w3-center');
   header.classList.add('w3-monospace');
-  header.classList.add('w3-gray');
+  header.classList.add('header-message');
+  //
+  /*for (let i=1; i<13; i++) {
+    is = i.toString();
+    let h_id = is.concat("h");
+    let u_id = is.concat("u");
+    let b_id = is.concat("b");
+    document.getElementById(h_id).innerHTML = "";
+    document.getElementById(u_id).innerHTML = "E";
+    document.getElementById(b_id).innerHTML = "&nbsp;";
+  }*/
+}
+
+
+function printErrorClear() {
+	const header = document.getElementById("tippeHeader");
+  header.innerHTML = "Tippetegngenerator <small>v1.1 &beta;</small>";
+  header.classList.remove('w3-gray');
+  header.classList.add('w3-pink');
+  header.classList.add('w3-center');
 }
 
 
@@ -215,6 +236,9 @@ function garder() {
     document.getElementById(halvgard_ids[i]).innerHTML = "X"; 
   }
 } // end function
+
+
+
 
 
 

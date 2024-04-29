@@ -9,6 +9,20 @@
   margin:auto;
 }
 
+.jersey-20 {
+  font-family: "Jersey 20", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header-message {
+	color: #0f0;
+	background-color: #555;
+  border-color: #0f0;
+}
+
+
+
 .radio-button-container input[type="radio"] {
   display: none;
 }
@@ -37,3 +51,4 @@
 .radio-button-container label:hover {
   background-color: #fff;
 }
+
