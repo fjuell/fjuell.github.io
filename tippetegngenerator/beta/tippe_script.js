@@ -69,8 +69,9 @@ function getRandomElements(array, n) {
 
 
 function getLockedGarderings() {
-  let antHalvgard = 0;
-  let antHelgard = 0;
+  let halvgards = [];
+  let helgards = [];
+  let nonLocked = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
   for (let i=1; i<13; i++) {
     is = i.toString();
     let h_id = is.concat("h");
@@ -79,6 +80,8 @@ function getLockedGarderings() {
     let kamp_id = "kamp".concat(is);
     let numberOfXes = 0;
     if (document.getElementById(kamp_id).getAttribute("data-lock") === "yes") {
+      const index = nonLocked.indexOf(is)
+      nonLocked.splice(index, 1);
       if (document.getElementById(h_id).innerHTML === "X") {
         numberOfXes = numberOfXes+1;
       }
@@ -90,14 +93,25 @@ function getLockedGarderings() {
       }
     }
     if (numberOfXes == 2) {
-      antHalvgard = antHalvgard+1;
+      halvgards.push(is);
     }
     if (numberOfXes == 3) {
-      antHelgard = antHelgard+1;
+      helgards.push(is);
     }
   } // end for
-  document.getElementById("TESTAREA_6").innerHTML = "lockHalv,lockHel:".concat([antHalvgard, antHelgard]);
-  return [antHalvgard, antHelgard];
+  document.getElementById("TESTAREA_6").innerHTML = "lockHalv:".concat([halvgards, "lockHel:", helgards]);
+  return [halvgards, helgards, nonLocked];
+}
+
+
+
+function printError() {
+  const header = document.getElementById("tippeHeader");
+  header.innerHTML = "<small>Brukerfeil: Overgardering</small>";
+  header.classList.remove('w3-pink');
+  header.classList.remove('w3-center');
+  header.classList.add('w3-monospace');
+  header.classList.add('w3-gray');
 }
 
 
@@ -115,51 +129,67 @@ function garder() {
     }
   }
   document.getElementById("TESTAREA_1").innerHTML = "rekker:".concat(rekker); // Output to test div
-  let kamper = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+  
+  usedGarderings = getLockedGarderings();
+
+  // Kamper som ikke er locked
+  let kamper = usedGarderings[2];
+  document.getElementById("TESTAREA_7").innerHTML = "kamper:".concat(kamper);
  
+  let antLockedHalvgards = usedGarderings[0].length
+  let antLockedHelgards = usedGarderings[1].length
   // Pick random kamper to be halvgardert
   let halvgarderte;
   if (rekker==1) {
+    if (antLockedHalvgards>0 || antLockedHelgards>0) {
+      printError();
+      return "Error: Brukerfeil";
+    }
     halvgarderte = [];
   } else if (rekker==2) {
-    halvgarderte = getRandomElements(kamper, 1);
+    if (antLockedHalvgards>1 || antLockedHelgards>0) {
+      printError();
+      return "Error: Brukerfeil";
+    }
+    halvgarderte = getRandomElements(kamper, (1 - usedGarderings[0].length));
   } else if (rekker==16) {
-    halvgarderte = getRandomElements(kamper, 4);
+    if (antLockedHalvgards>4 || antLockedHelgards>0) {
+      printError();
+      return "Error: Brukerfeil";
+    }
+    halvgarderte = getRandomElements(kamper, (4 - usedGarderings[0].length));
   } else if (rekker==32) {
-    halvgarderte = getRandomElements(kamper, 5);
+    if (antLockedHalvgards>5 || antLockedHelgards>0) {
+      printError();
+      return "Error: Brukerfeil";
+    }
+    halvgarderte = getRandomElements(kamper, (5 - (usedGarderings[0].length+usedGarderings[1].length)));
   } else if (rekker==48) {
-    halvgarderte = getRandomElements(kamper, 5);
+    if (antLockedHalvgards>4 || antLockedHelgards>1) {
+      printError();
+      return "Error: Brukerfeil";
+    }
+    halvgarderte = getRandomElements(kamper, (5 - usedGarderings[0].length));
   } else if (rekker==64) {
-    halvgarderte = getRandomElements(kamper, 6);
+    if (antLockedHalvgards>6 || antLockedHelgards>0) {
+      printError();
+      return "Error: Brukerfeil";
+    }
+    halvgarderte = getRandomElements(kamper, (6 - usedGarderings[0].length));
   }
   document.getElementById("TESTAREA_2").innerHTML = "halvgarderte:".concat(halvgarderte);
 
-  // Check locked kamper, and which is halv/helgardert allerede. 
-  // Dette må avgjøre hvor mange garderinger som skal gjøres under.
-  // Kamplisten må også redefineres: Kan bare trekke tilfeldige garderinger fra kamper som 
-  // ikke er låst.
-  usedGarderings = getLockedGarderings();
-  // Gi feilmelding i header hvis for mange halvgarderinger
-  if (usedGarderings[0] > halvgarderte.length) {
-    const header = document.getElementById("tippeHeader");
-    header.innerHTML = "<small>Brukerfeil: Mange garderinger</small>";
-    header.classList.remove('w3-pink');
-    header.classList.remove('w3-center');
-    header.classList.add('w3-gray');
-    return "Error: Brukerfeil"; 
-  }
-
-  // Subtract locked garderinger
-  //halvgarderte = halvgarderte - usedGarderings[0];
-  
-
-  if (rekker==48) {
+    
+  // Special Case 48
+  if (rekker==48 && antLockedHelgards==0) {
     // Bruk siste halvgardering, og gjør den til helgardering. 
     let last_element = halvgarderte[halvgarderte.length - 1]
     document.getElementById(last_element.concat("h")).innerHTML = "X";
     document.getElementById(last_element.concat("u")).innerHTML = "X";
     document.getElementById(last_element.concat("b")).innerHTML = "X";
     // Og fjern den fra listen
+    halvgarderte.pop();
+  } else if (rekker==48 && antLockedHelgards==1) {
     halvgarderte.pop();
   }
 
@@ -168,10 +198,12 @@ function garder() {
     let h_id = halvgarderte[i].concat("h");
     let u_id = halvgarderte[i].concat("u");
     let b_id = halvgarderte[i].concat("b");
+    let kamp_id = "kamp".concat(halvgarderte[i]);
+    locked = document.getElementById(kamp_id).getAttribute("data-lock");
     let ids_avail = [];
-    if (document.getElementById(h_id).innerHTML != "X") {ids_avail.push(h_id)};
-    if (document.getElementById(u_id).innerHTML != "X") {ids_avail.push(u_id)};
-    if (document.getElementById(b_id).innerHTML != "X") {ids_avail.push(b_id)};
+    if (document.getElementById(h_id).innerHTML != "X" && locked === "no") {ids_avail.push(h_id)};
+    if (document.getElementById(u_id).innerHTML != "X" && locked === "no") {ids_avail.push(u_id)};
+    if (document.getElementById(b_id).innerHTML != "X" && locked === "no") {ids_avail.push(b_id)};
     document.getElementById("TESTAREA_3").innerHTML = "ids_avail:".concat(ids_avail);
     const n = Math.random();
     if (n<0.5) {halvgard_ids.push(ids_avail[0])}
