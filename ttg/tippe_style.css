@@ -1,0 +1,58 @@
+
+
+.xbox
+{
+  width:1.3em;
+  height:1.3em;
+  line-height: 1.3em;
+  text-align: center;
+  margin:auto;
+}
+
+.jersey-20 {
+  font-family: "Jersey 20", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header-message {
+	color: #0f0;
+	background-color: #555;
+  border-color: #0f0;
+}
+
+
+
+.radio-button-container input[type="radio"] {
+  display: none;
+}
+
+.radio-button-container label {
+  color: #0b1222;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  padding: 2px 12px;
+  border-radius: 6px;
+  /*border: 1px solid #555;*/
+  cursor: pointer;
+  background-color: #d0dfe6;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.radio-button-container input[type="radio"]:checked + label {
+  background-color: #ff0;
+  border-color: #ff0;
+}
+
+.radio-button-container input[type="radio"]:focus + label {
+  /*border: 2px dashed #444;*/
+}
+
+.radio-button-container label:hover {
+  background-color: #fff;
+}
+
