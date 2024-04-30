@@ -276,8 +276,9 @@ function clearall() {
   }
   const header = document.getElementById("tippeHeader");
   header.innerHTML = "Tippetegngenerator <small>v1.1 &beta;</small>";
-  header.classList.remove('w3-gray');
-  header.classList.add('w3-pink');
+  header.classList.remove('w3-monospace');
+  header.classList.remove('header-message');
+  header.classList.add('w3-yellow');
   header.classList.add('w3-center');
 }
 
