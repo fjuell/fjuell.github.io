@@ -32,11 +32,15 @@
   font-weight: bold;
   display: inline-block;
   text-align: center;
-  padding: 16px 24px;
+  padding: 12px 22px;
   border-radius: 6px;
   /*border: 1px solid #555;*/
   cursor: pointer;
   background-color: #d0dfe6;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 
 .radio-button-container input[type="radio"]:checked + label {
