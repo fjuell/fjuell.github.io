@@ -109,21 +109,26 @@ function getLockedGarderings() {
 
 function printError() {
   const header = document.getElementById("tippeHeader");
-  header.innerHTML = "<div class='jersey-20'>user error: check your X-es</div>";
+  header.innerHTML = "<div class='jersey-20'>user error: check your marks</div>";
   header.classList.remove('w3-pink');
   header.classList.remove('w3-center');
   header.classList.add('w3-monospace');
   header.classList.add('header-message');
-  //
-  /*for (let i=1; i<13; i++) {
+  // Swap X-es for skulls
+  for (let i=1; i<13; i++) {
     is = i.toString();
     let h_id = is.concat("h");
     let u_id = is.concat("u");
     let b_id = is.concat("b");
-    document.getElementById(h_id).innerHTML = "";
-    document.getElementById(u_id).innerHTML = "E";
-    document.getElementById(b_id).innerHTML = "&nbsp;";
-  }*/
+    let kamp_id = "kamp".concat(is);
+    ids = [h_id, u_id, b_id];
+    for (let idx in ids) {
+      if (document.getElementById(kamp_id).getAttribute("data-lock") === "yes" 
+        && document.getElementById(ids[idx]).innerHTML === "X") {
+        document.getElementById(ids[idx]).innerHTML = "<i class='material-symbols-outlined w3-xxxlarge'>skull</i>";
+      }
+    }
+  }
 }
 
 
@@ -133,6 +138,20 @@ function printErrorClear() {
   header.classList.remove('w3-gray');
   header.classList.add('w3-pink');
   header.classList.add('w3-center');
+  for (let i=1; i<13; i++) {
+    is = i.toString();
+    let h_id = is.concat("h");
+    let u_id = is.concat("u");
+    let b_id = is.concat("b");
+    let kamp_id = "kamp".concat(is);
+    ids = [h_id, u_id, b_id];
+    for (let idx in ids) {
+      if (document.getElementById(kamp_id).getAttribute("data-lock") === "yes" 
+        && document.getElementById(ids[idx]).innerHTML != "&nbsp;") {
+        document.getElementById(ids[idx]).innerHTML = "X";
+      }
+    }
+  }
 }
 
 
