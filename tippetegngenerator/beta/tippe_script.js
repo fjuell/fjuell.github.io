@@ -99,7 +99,7 @@ function getLockedGarderings() {
       helgards.push(is);
     }
   } // end for
-  document.getElementById("TESTAREA_6").innerHTML = "lockHalv:".concat([halvgards, "lockHel:", helgards]);
+  //document.getElementById("TESTAREA_6").innerHTML = "lockHalv:".concat([halvgards, "lockHel:", helgards]);
   return [halvgards, helgards, nonLocked];
 }
 
@@ -158,8 +158,8 @@ function printErrorClear() {
 
 
 function garder() {
-  let rekker = 1
   // Getting the checked radio button
+  let rekker = 1;
   var rekkRadios = document.getElementsByName('antRekk');
   for (var i = 0, length = rekkRadios.length; i < length; i++) {
     if (rekkRadios[i].checked) {
@@ -169,13 +169,12 @@ function garder() {
       break;
     }
   }
-  document.getElementById("TESTAREA_1").innerHTML = "rekker:".concat(rekker); // Output to test div
   
   usedGarderings = getLockedGarderings();
 
   // Kamper som ikke er locked
   let kamper = usedGarderings[2];
-  document.getElementById("TESTAREA_7").innerHTML = "kamper:".concat(kamper);
+  //document.getElementById("TESTAREA_7").innerHTML = "kamper:".concat(kamper);
  
   let antLockedHalvgards = usedGarderings[0].length
   let antLockedHelgards = usedGarderings[1].length
@@ -218,9 +217,7 @@ function garder() {
     }
     halvgarderte = getRandomElements(kamper, (6 - usedGarderings[0].length));
   }
-  document.getElementById("TESTAREA_2").innerHTML = "halvgarderte:".concat(halvgarderte);
 
-    
   // Special Case 48
   if (rekker==48 && antLockedHelgards==0) {
     // Bruk siste halvgardering, og gjør den til helgardering. 
@@ -245,16 +242,22 @@ function garder() {
     if (document.getElementById(h_id).innerHTML != "X" && locked === "no") {ids_avail.push(h_id)};
     if (document.getElementById(u_id).innerHTML != "X" && locked === "no") {ids_avail.push(u_id)};
     if (document.getElementById(b_id).innerHTML != "X" && locked === "no") {ids_avail.push(b_id)};
-    document.getElementById("TESTAREA_3").innerHTML = "ids_avail:".concat(ids_avail);
+    //document.getElementById("TESTAREA_3").innerHTML = "ids_avail:".concat(ids_avail);
     const n = Math.random();
     if (n<0.5) {halvgard_ids.push(ids_avail[0])}
       else {halvgard_ids.push(ids_avail[1])}
   }
-  document.getElementById("TESTAREA_4").innerHTML = "halvgard_ids:".concat(halvgard_ids);
+  //document.getElementById("TESTAREA_4").innerHTML = "halvgard_ids:".concat(halvgard_ids);
   // Sett inn halvgarderingene
   for (var i = 0, length = halvgard_ids.length; i < length; i++) {
     document.getElementById(halvgard_ids[i]).innerHTML = "X"; 
   }
+
+  // Print chance of 12
+  let chance = (Number(rekker)/531441)*100;
+  chance = chance.toPrecision(2)
+  document.getElementById("display_chance").innerHTML = "Sjanse for 12: ".concat(chance, "%");
+
 } // end function
 
 
@@ -295,7 +298,5 @@ function checklocks() {
     } else {
       document.getElementById(lock_id).innerHTML = "";
     }
-    //locks.push(is.concat("-",document.getElementById(kamp_id).getAttribute("data-lock"),"<br/>"));
   }
-  //document.getElementById("TESTAREA_6").innerHTML = "Locks:<br/>".concat(locks);
 }
