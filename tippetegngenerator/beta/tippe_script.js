@@ -110,7 +110,7 @@ function getLockedGarderings() {
 function printError() {
   const header = document.getElementById("tippeHeader");
   header.innerHTML = "<div class='jersey-20'>user error: check your marks</div>";
-  header.classList.remove('w3-pink');
+  header.classList.remove('w3-yellow');
   header.classList.remove('w3-center');
   header.classList.add('w3-monospace');
   header.classList.add('header-message');
@@ -135,8 +135,9 @@ function printError() {
 function printErrorClear() {
 	const header = document.getElementById("tippeHeader");
   header.innerHTML = "Tippetegngenerator <small>v1.1 &beta;</small>";
-  header.classList.remove('w3-gray');
-  header.classList.add('w3-pink');
+  header.classList.remove('w3-monospace');
+  header.classList.remove('header-message');
+  header.classList.add('w3-yellow');
   header.classList.add('w3-center');
   for (let i=1; i<13; i++) {
     is = i.toString();
