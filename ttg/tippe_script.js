@@ -134,7 +134,7 @@ function printError() {
 
 function printErrorClear() {
 	const header = document.getElementById("tippeHeader");
-  header.innerHTML = "Tippetegngenerator <small>v1.1 &beta;</small>";
+  header.innerHTML = "Tippetegngenerator <small>v1.1</small>";
   header.classList.remove('w3-monospace');
   header.classList.remove('header-message');
   header.classList.add('w3-yellow');
@@ -278,7 +278,7 @@ function clearall() {
     document.getElementById(kamp_id).setAttribute("data-lock", "no");
   }
   const header = document.getElementById("tippeHeader");
-  header.innerHTML = "Tippetegngenerator <small>v1.1 &beta;</small>";
+  header.innerHTML = "Tippetegngenerator <small>v1.1</small>";
   header.classList.remove('w3-monospace');
   header.classList.remove('header-message');
   header.classList.add('w3-yellow');
