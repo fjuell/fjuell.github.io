@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="../css/f-darkmatter.css">
+  <head>
+    <title>MIDI Program Change Calculator</title>
+    <script>
+      function jp08_to_pc(bank, patch) {
+        // Takes bank, patch. Returns pc starting with 000.
+        var pc = (bank - 1) * 8 + patch - 1;
+        return pc.toString().padStart(3, '0');
+      }
+
+      function d05_to_pc(card, bank, patch) {
+        // Takes cardname, bank, patch. Returns MSB, LSB, PC starting with 001.
+        var msb = "087";
+        var lsb_map = {'u1':'000','u2':'001','u3':'002','u4':'003','u5':'004','u6':'005','u7':'006','u8':'007','p1':'008','p2':'009','p3':'010','p4':'011','p5':'012','p6':'013'};
+        var lsb = lsb_map[card.toLowerCase()];
+        var pc = (bank-1)*8 + patch;
+        return [msb, lsb, pc.toString().padStart(3, '0')];
+      }
+
+      function calculatePC_JP08() {
+        var bank = parseInt(document.querySelector('input[name="bank_jp08"]:checked').value);
+        var patch = parseInt(document.querySelector('input[name="patch_jp08"]:checked').value);
+
+        var pc = jp08_to_pc(bank, patch);
+
+        document.getElementById("result_jp08").innerHTML = pc;
+      }
+
+
+      function calculatePC_D05(radio) {
+        var card = document.querySelector('input[name="card_d05"]:checked').value;
+        var bank = parseInt(document.querySelector('input[name="bank_d05"]:checked').value);
+        var patch = parseInt(document.querySelector('input[name="patch_d05"]:checked').value);
+
+        var [msb, lsb, pc] = d05_to_pc(card, bank, patch);
+        document.getElementById("result_d05_msb").innerHTML = msb;
+        document.getElementById("result_d05_lsb").innerHTML = lsb;
+        document.getElementById("result_d05_pc").innerHTML = pc;
+
+      }
+
+    </script>
+  </head>
+
+
+  <style>
+    .radio-button-container input[type="radio"] {
+      display: none;
+    }
+
+    .radio-button-container label {
+      color: #0b1222;
+      font-weight: bold;
+      display: inline-block;
+      text-align: center;
+      padding: 10px 18px;
+      border-radius: 6px;
+      /*border: 1px solid #555;*/
+      cursor: pointer;
+      background-color: #d0dfe6;
+    }
+
+    .radio-button-container input[type="radio"]:checked + label {
+      background-color: #f00;
+      border-color: #f00;
+    }
+
+    .radio-button-container input[type="radio"]:focus + label {
+      /*border: 2px dashed #444;*/
+    }
+
+    .radio-button-container label:hover {
+      background-color: #f00;
+    }
+  </style>
+
+
+  <body class="fdm-cyan fdm-darkblue w3-xlarge">
+    <div class="w3-containter">
+    <h1>MIDI Prog Change Calc</h1>
+    <p>
+      Choose card, bank, and patch below, and get Program Change (PC) value.
+    </p>
+
+    <div class="w3-panel w3-border w3-jumbo">
+    <h2>Roland JP-08</h2>
+    <div class="radio-button-container w3-monospace w3-padding-small">
+      <input type="radio" name="bank_jp08" id="b1_jp08" value=1 onclick="calculatePC_JP08(this)" checked><label for="b1_jp08">1</label>
+      <input type="radio" name="bank_jp08" id="b2_jp08" value=2 onclick="calculatePC_JP08(this)"><label for="b2_jp08">2</label>
+      <input type="radio" name="bank_jp08" id="b3_jp08" value=3 onclick="calculatePC_JP08(this)"><label for="b3_jp08">3</label>
+      <input type="radio" name="bank_jp08" id="b4_jp08" value=4 onclick="calculatePC_JP08(this)"><label for="b4_jp08">4</label>
+      <input type="radio" name="bank_jp08" id="b5_jp08" value=5 onclick="calculatePC_JP08(this)"><label for="b5_jp08">5</label>
+      <input type="radio" name="bank_jp08" id="b6_jp08" value=6 onclick="calculatePC_JP08(this)"><label for="b6_jp08">6</label>
+      <input type="radio" name="bank_jp08" id="b7_jp08" value=7 onclick="calculatePC_JP08(this)"><label for="b7_jp08">7</label>
+      <input type="radio" name="bank_jp08" id="b8_jp08" value=8 onclick="calculatePC_JP08(this)"><label for="b8_jp08">8</label>
+    </div>
+    <div class="radio-button-container w3-monospace w3-padding-small">
+      <input type="radio" name="patch_jp08" id="p1_jp08" value=1 onclick="calculatePC_JP08(this)" checked><label for="p1_jp08">1</label>
+      <input type="radio" name="patch_jp08" id="p2_jp08" value=2 onclick="calculatePC_JP08(this)"><label for="p2_jp08">2</label>
+      <input type="radio" name="patch_jp08" id="p3_jp08" value=3 onclick="calculatePC_JP08(this)"><label for="p3_jp08">3</label>
+      <input type="radio" name="patch_jp08" id="p4_jp08" value=4 onclick="calculatePC_JP08(this)"><label for="p4_jp08">4</label>
+      <input type="radio" name="patch_jp08" id="p5_jp08" value=5 onclick="calculatePC_JP08(this)"><label for="p5_jp08">5</label>
+      <input type="radio" name="patch_jp08" id="p6_jp08" value=6 onclick="calculatePC_JP08(this)"><label for="p6_jp08">6</label>
+      <input type="radio" name="patch_jp08" id="p7_jp08" value=7 onclick="calculatePC_JP08(this)"><label for="p7_jp08">7</label>
+      <input type="radio" name="patch_jp08" id="p8_jp08" value=8 onclick="calculatePC_JP08(this)"><label for="p8_jp08">8</label>
+    </div>  
+    <div class="w3-left-align">
+    <h3><label class="fdm-green-box w3-round" style="writing-mode: vertical-lr; text-orientation:upright; text-align:center; vertical-align: -18px; height:80px" for="result_jp08">PC</label><output class="fdm-yellow-box w3-round w3-padding-small w3-jumbo" id="result_jp08">000</output>
+    </h3>
+    </div>
+    </div>
+
+
+    <div class="w3-panel w3-border w3-jumbo">
+    <h2>Roland D-05</h2>
+    <div class="radio-button-container w3-monospace w3-padding-small">
+      <input type="radio" class="w3-round" name="card_d05" id="c1_d05" value="p1" onclick="calculatePC_D05(this)" checked><label for="c1_d05">P1</label>
+      <input type="radio" name="card_d05" id="c2_d05" value="p2" onclick="calculatePC_D05(this)"><label for="c2_d05">P2</label>
+      <input type="radio" name="card_d05" id="c3_d05" value="p3" onclick="calculatePC_D05(this)"><label for="c3_d05">P3</label>
+      <input type="radio" name="card_d05" id="c4_d05" value="p4" onclick="calculatePC_D05(this)"><label for="c4_d05">P4</label>
+      <input type="radio" name="card_d05" id="c5_d05" value="p5" onclick="calculatePC_D05(this)"><label for="c5_d05">P5</label>
+      <input type="radio" name="card_d05" id="c6_d05" value="p6" onclick="calculatePC_D05(this)"><label for="c6_d05">P6</label>
+    </div>
+    <div class="radio-button-container w3-monospace w3-padding-small">
+      <input type="radio" name="card_d05" id="c7_d05" value="u1" onclick="calculatePC_D05(this)"><label for="c7_d05">U1</label>
+      <input type="radio" name="card_d05" id="c8_d05" value="u2" onclick="calculatePC_D05(this)"><label for="c8_d05">U2</label>
+      <input type="radio" name="card_d05" id="c9_d05" value="u3" onclick="calculatePC_D05(this)"><label for="c9_d05">U3</label>
+      <input type="radio" name="card_d05" id="ca_d05" value="u4" onclick="calculatePC_D05(this)"><label for="ca_d05">U4</label>
+      <input type="radio" name="card_d05" id="cb_d05" value="u5" onclick="calculatePC_D05(this)"><label for="cb_d05">U5</label>
+      <input type="radio" name="card_d05" id="cc_d05" value="u6" onclick="calculatePC_D05(this)"><label for="cc_d05">U6</label><br/>
+    </div>
+    <div class="radio-button-container w3-monospace w3-padding-small">
+      <input type="radio" name="card_d05" id="cd_d05" value="u7" onclick="calculatePC_D05(this)"><label for="cd_d05">U7</label>
+      <input type="radio" name="card_d05" id="ce_d05" value="u8" onclick="calculatePC_D05(this)"><label for="ce_d05">U8</label>
+    </div>
+    <br/>
+    <div class="radio-button-container w3-monospace w3-padding-small">
+      <input type="radio" name="bank_d05" id="b1_d05" value=1 onclick="calculatePC_D05(this)" checked><label for="b1_d05">1</label>
+      <input type="radio" name="bank_d05" id="b2_d05" value=2 onclick="calculatePC_D05(this)"><label for="b2_d05">2</label>
+      <input type="radio" name="bank_d05" id="b3_d05" value=3 onclick="calculatePC_D05(this)"><label for="b3_d05">3</label>
+      <input type="radio" name="bank_d05" id="b4_d05" value=4 onclick="calculatePC_D05(this)"><label for="b4_d05">4</label>
+      <input type="radio" name="bank_d05" id="b5_d05" value=5 onclick="calculatePC_D05(this)"><label for="b5_d05">5</label>
+      <input type="radio" name="bank_d05" id="b6_d05" value=6 onclick="calculatePC_D05(this)"><label for="b6_d05">6</label>
+      <input type="radio" name="bank_d05" id="b7_d05" value=7 onclick="calculatePC_D05(this)"><label for="b7_d05">7</label>
+      <input type="radio" name="bank_d05" id="b8_d05" value=8 onclick="calculatePC_D05(this)"><label for="b8_d05">8</label>
+    </div>
+    <div class="radio-button-container w3-monospace w3-padding-small">
+      <input type="radio" name="patch_d05" id="p1_d05" value=1 onclick="calculatePC_D05(this)" checked><label for="p1_d05">1</label>
+      <input type="radio" name="patch_d05" id="p2_d05" value=2 onclick="calculatePC_D05(this)"><label for="p2_d05">2</label>
+      <input type="radio" name="patch_d05" id="p3_d05" value=3 onclick="calculatePC_D05(this)"><label for="p3_d05">3</label>
+      <input type="radio" name="patch_d05" id="p4_d05" value=4 onclick="calculatePC_D05(this)"><label for="p4_d05">4</label>
+      <input type="radio" name="patch_d05" id="p5_d05" value=5 onclick="calculatePC_D05(this)"><label for="p5_d05">5</label>
+      <input type="radio" name="patch_d05" id="p6_d05" value=6 onclick="calculatePC_D05(this)"><label for="p6_d05">6</label>
+      <input type="radio" name="patch_d05" id="p7_d05" value=7 onclick="calculatePC_D05(this)"><label for="p7_d05">7</label>
+      <input type="radio" name="patch_d05" id="p8_d05" value=8 onclick="calculatePC_D05(this)"><label for="p8_d05">8</label>
+    </div>  
+    <h3><label class="fdm-green-box w3-round" style="writing-mode: vertical-lr; text-orientation:upright; text-align:center; vertical-align: -18px; height:80px" for="result_d05_msb">MSB</label><output class="fdm-yellow-box w3-round w3-padding-small w3-jumbo" id="result_d05_msb">087</output>
+      <label class="fdm-green-box w3-round" style="writing-mode: vertical-lr; text-orientation:upright; text-align:center; vertical-align: -18px; height:80px" for="result_d05_lsb">LSB</label><output class="fdm-yellow-box w3-round w3-padding-small w3-jumbo" id="result_d05_lsb">008</output>
+      <label class="fdm-green-box w3-round" style="writing-mode: vertical-lr; text-orientation:upright; text-align:center; vertical-align: -18px; height:80px" for="result_d05_pc">PC</label><output class="fdm-yellow-box w3-round w3-padding-small w3-jumbo" id="result_d05_pc">001</output>
+    </h3>
+  </div>
+  </div>
+
+  </body>
+</html>
