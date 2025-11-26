@@ -10,8 +10,16 @@
 
 <br/>
 
-<table class="w3-table-all">
+<table class="w3-table-all" id="xvTable">
 <tr class="w3-yellow"><th>Patch Number</th><th>Patch Name</th><th>Category</th><th>MSB</th><th>LSB</th><th>PC</th></tr>
+<tr class="w3-gray"><th></th>
+    <th>
+        <input type="text" id="myInputNAME" onkeyup="myFunctionNAME()" placeholder="Search..." title="Type a name">
+    </th>
+    <th>
+        <input type="text" id="myInputCATEGORY" onkeyup="myFunctionCATEGORY()" placeholder="Search..." title="Type a category">
+    </th>
+    <th></th><th></th><th></th></tr>
 <tr><td>US-001</td><td>Rhodes Trem</td><td></td><td>87</td><td>00</td><td>001</td></tr>
 <tr><td>US-002</td><td>Hydrogen</td><td></td><td>87</td><td>00</td><td>002</td></tr>
 <tr><td>US-003</td><td>Groovedigger</td><td></td><td>87</td><td>00</td><td>003</td></tr>
@@ -1546,8 +1554,65 @@
 <tr><td>XB-310</td><td>Scratch 9</td><td>SOUND FX</td><td>93</td><td>6</td><td>054</td></tr>
 <tr><td>XB-311</td><td>Scratch 10</td><td>SOUND FX</td><td>93</td><td>6</td><td>055</td></tr>
 <tr><td>XB-312</td><td>Vinyl Nz</td><td>SOUND FX</td><td>93</td><td>6</td><td>056</td></tr>
-
 </table>
+
+
+
+
+
+
+
+
+
+
+<script>
+function myFunctionNAME() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInputNAME");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("xvTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+
+function myFunctionCATEGORY() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInputCATEGORY");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("xvTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+
+
+
+
+
+
+
 
 
 
